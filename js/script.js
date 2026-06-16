@@ -1,4 +1,3 @@
-
-/**
- * individual js codes
- */
+function init() {
+    console.log(menu);
+}
