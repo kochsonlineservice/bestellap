@@ -49,7 +49,7 @@ let menu = {
     {
       id: 7,
       name: "Wasser Still",
-      performancerice: 2.95,
+      price: 2.95,
       description: " Stilles Waser aus Italien",
     },
 

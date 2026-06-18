@@ -8,15 +8,67 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body onload="init()">
+    <main id="orderList">
+      <header>
+        <img src="./assets/img/header_img-01.png" alt="Header Bild" />
+      </header>
 
+      <div class="main_container">
+        <section class="order_content"></section>
 
-    <header>Hier kommt die Bestell App</header>
+        <section class="basket_section"></section>
+      </div>
 
-    
-    <main id="orderList"></main>
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-logo">
+            <img src="./assets/img/header_img-01.png" alt="Bestell App Logo" />
+
+            <h3>Bestell-Hotline</h3>
+            <a class="phone" href="tel:+491234567890"> ☎ +49 123 4567890 </a>
+
+            <p>Bestellungen schnell und einfach telefonisch oder online.</p>
+          </div>
+
+          <div class="footer-links">
+            <h3>Rechtliches</h3>
+
+            <a href="#">Impressum</a>
+            <a href="#">Datenschutz</a>
+            <a href="#">AGB</a>
+          </div>
+
+          <div class="footer-contact">
+            <h3>Kontakt</h3>
+
+            <p>Musterstraße 10</p>
+            <p>12345 Musterstadt</p>
+
+            <a href="https://maps.google.com" target="_blank">
+              📍 Anfahrt mit Google Maps
+            </a>
+
+            <a href="mailto:info@bestellapp.de"> ✉ info@bestellapp.de </a>
+          </div>
+
+          <div class="footer-times">
+            <h3>Öffnungszeiten</h3>
+
+            <p>Mo - Fr: 11:00 - 22:00 Uhr</p>
+            <p>Sa - So: 12:00 - 23:00 Uhr</p>
+
+            <p>🚚 Liefergebiet: bis 10 km</p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          © 2026 Bestell App • Alle Rechte vorbehalten.
+        </div>
+      </footer>
+    </main>
+
     <script src="./js/script.js"></script>
     <script src="./js/db.js"></script>
     <script src="./js/template.js"></script>
-    
   </body>
 </html>

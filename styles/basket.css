@@ -1,0 +1,6 @@
+.basket_section{
+    width: 300px;
+    flex-grow: 1;
+    border: 2px solid red;
+    padding: 16px;
+}

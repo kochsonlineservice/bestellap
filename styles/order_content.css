@@ -1,0 +1,7 @@
+.order_content{
+    width: calc(100% - 308px);
+    height: 100vh;
+    padding: 16px;
+    border: 2px solid blue;
+
+}
