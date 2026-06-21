@@ -1,6 +1,7 @@
 .basket_section{
-    width: 300px;
-    flex-grow: 1;
-    border: 2px solid red;
-    padding: 16px;
+    width:300px;
+    min-width:300px;
+    min-height:300px;
+    border:2px solid green;
+
 }

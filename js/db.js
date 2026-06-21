@@ -1,4 +1,4 @@
-let menu = {
+let mainDish = {
   hauptgerichte: [
     {
       id: 1,
