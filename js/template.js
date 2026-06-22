@@ -9,7 +9,7 @@ function getDishTemplate(dish) {
                               <button class="btn-plus">+</button>
                     </div>
                          
-                            <p class="dishes_line">${dish.price} €</p>
+                            <p class="dishes_line">${dish.price.toFixed(2)} €</p>
                    
                             <p class="dishes_line">${dish.description}</p>
 
@@ -18,4 +18,15 @@ function getDishTemplate(dish) {
                 </div>
  
      `;
+}
+
+
+function getBasketTemplate(basketItem){
+        return`
+        
+        
+        `
+
+
+
 }

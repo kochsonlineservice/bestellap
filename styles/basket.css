@@ -2,6 +2,16 @@
     width:300px;
     min-width:300px;
     min-height:300px;
-    border:2px solid green;
 
+   
+  
+
+}
+
+
+.basket_title{
+    font-size: 36px;
+    text-align: center;
+
+    padding-top: 16px;
 }

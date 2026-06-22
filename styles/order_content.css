@@ -3,9 +3,9 @@
 .order_content {
   width: calc(100% - 300px);
   min-height: 300px;
-  background-color: aqua;
+  background-color: #f6f3ef;
   padding: 16px;
-  border: 2px solid red;
+  
 }
 
 
@@ -20,7 +20,7 @@
   font-size: 36px;
   padding-bottom: 16px;
   padding-top: 16px;
-  border-top: 1px solid green;
+ 
 }
 
 

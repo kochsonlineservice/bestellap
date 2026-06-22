@@ -2,14 +2,14 @@ function init() {
   renderMainDishes();
   renderDesserts();
   renderDrinks();
+  renderBasket();
 }
 
 function renderMainDishes() {
   let html = `
   <h2 class="category_title">🍕 Hauptgerichte</h2>
   `
-    
-  ;
+;
 
   let contentRef = document.getElementById("mainDishes");
 
@@ -53,3 +53,30 @@ function renderDrinks() {
 
   contentRef.innerHTML = html;
 }
+
+
+// basket rendern
+
+ let basket =[]
+
+ function renderBasket(){
+    let html = `
+                 <h4 class="basket_title">🛒 Warenkorb</h4>
+    `
+
+    let contentRef = document.getElementById("basket");
+
+
+    for (let index = 0; index < basket.length; index++) {
+          
+      let basketItem = basket[index];
+      
+      html += getBasketTemplate(basketItem);
+
+      
+    }
+
+     contentRef.innerHTML = html;
+
+ }
+ 
