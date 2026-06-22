@@ -36,6 +36,15 @@ let mainDish = {
       price: 9.95,
       description: "Italienisches Käse mit Quark und Honig Sausse",
     },
+
+    {
+      id: 5,
+      name: "Schoko Pudding mit Sahne",
+      price: 14.95,
+      description: "Italienischer Pudding mit Sahne",
+    },
+
+
   ],
 
   getränke: [

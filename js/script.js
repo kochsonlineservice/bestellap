@@ -5,7 +5,11 @@ function init() {
 }
 
 function renderMainDishes() {
-  let html = "";
+  let html = `
+  <h2 class="category_title">🍕 Hauptgerichte</h2>
+  `
+    
+  ;
 
   let contentRef = document.getElementById("mainDishes");
 
@@ -18,7 +22,9 @@ function renderMainDishes() {
 }
 
 function renderDesserts() {
-  let html = "";
+  let html = `
+  <h2 class="category_title">🍰 Nachspeisen</h2>
+  `;
 
   let contentRef = document.getElementById("desserts");
 
@@ -31,7 +37,11 @@ function renderDesserts() {
 }
 
 function renderDrinks() {
-  let html = "";
+  let html = `
+    <h2 class="category_title">🥤 Getränke</h2>
+  `
+  
+  ;
 
   let contentRef = document.getElementById("drinks");
 

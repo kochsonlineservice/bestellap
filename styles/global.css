@@ -2,19 +2,20 @@
 globale styles
 ========================= */
 
-*{
-    box-sizing: border-box;
-    margin: 0;
-    scroll-behavior: smooth;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  scroll-behavior: smooth;
 }
 
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
 
-.content_wrapper{
-    display: flex;
-    align-items: flex-start;
+.content_wrapper {
+  display: flex;
+  align-items: flex-start;
 }
+
 
 
