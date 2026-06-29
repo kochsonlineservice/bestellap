@@ -1,11 +1,14 @@
 .basket_section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     width:300px;
     min-width:300px;
     min-height:300px;
 
-   
-  
-
+    position: sticky;
+    top: 0;
 }
 
 
@@ -14,4 +17,111 @@
     text-align: center;
 
     padding-top: 16px;
+}
+
+
+.basket_total{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+
+    margin-top: 16px;
+    padding: 12px;
+    
+    font-size: 20px;
+    text-align: center;
+}
+
+
+.basket_item_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.basket_items,
+.total_price_basket {
+   margin: 16px;
+   padding: 8px;
+
+   font-size: 16px;
+   font-family: Arial, Helvetica, sans-serif;
+
+   color: whitesmoke;
+   background-color: var(--color-orange);
+
+   border-radius: 10px;
+
+   
+}
+.total_price_basket{
+    font-size: 24px;
+     white-space: nowrap;
+}
+
+.order_button{
+
+    width: calc(100% - 32px);
+    height: 3em;
+    margin: 16px;
+    padding: 8px;
+
+   font-size: 24px;
+   font-family: Arial, Helvetica, sans-serif;
+
+   color: whitesmoke;
+   background-color: var(--color-orange);
+
+   border:  none;
+   border-radius: 10px;
+
+   cursor: pointer;
+
+   transition: transform 0.2s ease;
+}
+
+.order_button:hover {
+    transform: scale(1.1);
+}
+
+.basket_btn{
+    font-size: 16px;
+    margin: 12px;
+
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.basket_btn:hover{
+    transform: scale(1.1);
+}
+
+.basket_item_name{
+    font-size: 24px;
+}
+
+.basket_item_price {
+    text-align: center;
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+.basket_item_name {
+    flex: 1;
+    text-align: center;
+}
+
+.total_delivery_price{
+
+    padding: 10px;
+    color:var(--color-orange);
+   
+     width: calc(100% - 32px);
+   
+   border-radius: 10px;
 }

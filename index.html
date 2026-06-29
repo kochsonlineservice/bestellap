@@ -9,18 +9,20 @@
   </head>
   <body onload="init()">
     <header>
-      <img class="img_logo" src="./assets/img/header_img-01.png" alt="Header Bild" />
+      <img
+        class="img_logo"
+        src="./assets/img/header_img-01.png"
+        alt="Header Bild"
+      />
       <button class="hamburger-btn" aria-label="Menü öffnen">
         <span></span>
         <span></span>
         <span></span>
-    </button>
+      </button>
     </header>
 
-   <main class="content_wrapper">
-
-    <section class="order_content">
-
+    <main class="content_wrapper">
+      <section class="order_content">
         <section id="mainDishes">
           <h2>🍕 Hauptgerichte</h2>
         </section>
@@ -29,18 +31,14 @@
           <h2>🍕 Desserts</h2>
         </section>
 
-
         <section id="drinks">
           <h2>🍕 Drinks</h2>
         </section>
+      </section>
 
-    </section>
-
-    <section class="basket_section" id="basket"></section>
-
-</main>
-
-
+      <section class="basket_section" id="basket"></section>
+    </main>
+    <div class="total_delivery_price"></div>
 
     <footer class="footer">
       <div class="footer-container">
@@ -89,6 +87,7 @@
       </div>
     </footer>
 
+   
     <script src="./js/script.js"></script>
     <script src="./js/db.js"></script>
     <script src="./js/template.js"></script>

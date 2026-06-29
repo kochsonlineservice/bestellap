@@ -2,6 +2,15 @@
 globale styles
 ========================= */
 
+
+:root {
+  /* colors */
+  --color-orange: #ff8000;
+  --color-background-grey: #f6f3ef;
+  --color-text: whitesmoke;
+  --color-border-bottom: rgb(225, 218, 244);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -15,6 +24,10 @@ a {
 .content_wrapper {
   display: flex;
   align-items: flex-start;
+}
+
+body{
+ 
 }
 
 

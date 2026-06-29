@@ -5,6 +5,7 @@ let mainDish = {
       name: "Pizza Klassiko",
       price: 12.95,
       description: " Klassiche Pizza mit Tomaten und Käse",
+      
     },
 
     {
@@ -38,7 +39,7 @@ let mainDish = {
     },
 
     {
-      id: 5,
+      id: 6,
       name: "Schoko Pudding mit Sahne",
       price: 14.95,
       description: "Italienischer Pudding mit Sahne",
@@ -49,21 +50,21 @@ let mainDish = {
 
   getränke: [
     {
-      id: 6,
+      id: 7,
       name: "Cola",
       price: 4.50,
       description: "Coca Cola Original",
     },
 
     {
-      id: 7,
+      id: 8,
       name: "Wasser Still",
       price: 2.95,
       description: " Stilles Waser aus Italien",
     },
 
     {
-      id: 8,
+      id: 9,
       name: "Rotwein seco",
       price: 19.95,
       description: "Rotwein Trocken",
