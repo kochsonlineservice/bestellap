@@ -22,26 +22,32 @@ function getDishTemplate(dish) {
 
 function getBasketTemplate(basketItem) {
   return `
+
     <div class="basket_items">
 
         <div class="basket_item_header">
 
-           <button onclick="removeFromBasket(${basketItem.id})">-</button>
+    ${getRemoveButton(basketItem)}
 
-            <p class="basket_item_name">
-                ${basketItem.quantity}x ${basketItem.name}
-            </p>
+    <p class="basket_item_name">
+        ${basketItem.quantity}x ${basketItem.name}
+    </p>
 
-           <button onclick="addToBasket(${basketItem.id})">+</button>
+    <button class="basket_btn" onclick="addToBasket(${basketItem.id})">➕</button>
 
+</div>
         </div>
 
-        <p class="basket_item_name">
-            ${(basketItem.price * basketItem.quantity).toFixed(2)}€
+        <p class="basket_item_price">
+            ${(basketItem.price * basketItem.quantity).toFixed(2)} €
         </p>
 
     </div>
+
   `;
 
   renderBasket();
 }
+
+
+ 

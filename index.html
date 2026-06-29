@@ -1,93 +1,175 @@
 <!doctype html>
 <html lang="de">
   <head>
+    <!-- Meta information -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Website title -->
     <title>Bestell App</title>
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="./assets/icons/favicon.png" />
+
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="./style.css" />
   </head>
+
   <body onload="init()">
+    <!-- ========================= -->
+    <!-- Header -->
+    <!-- ========================= -->
     <header>
       <img
         class="img_logo"
         src="./assets/img/header_img-01.png"
-        alt="Header Bild"
+        alt="Bestell App Logo"
       />
-      <button class="hamburger-btn" aria-label="Menü öffnen">
+
+      <!-- Mobile navigation button -->
+      <button
+        class="hamburger-btn"
+        aria-label="Open shopping cart"
+      >
         <span></span>
         <span></span>
         <span></span>
       </button>
     </header>
 
+    <!-- ========================= -->
+    <!-- Main Content -->
+    <!-- ========================= -->
     <main class="content_wrapper">
-      <section class="order_content">
-        <section id="mainDishes">
+      <!-- Menu -->
+      <section
+        class="order_content"
+        aria-label="Menu"
+      >
+        <!-- Main dishes -->
+        <section
+          id="mainDishes"
+          aria-label="Main dishes"
+        >
           <h2>🍕 Hauptgerichte</h2>
         </section>
 
-        <section id="desserts">
-          <h2>🍕 Desserts</h2>
+        <!-- Desserts -->
+        <section
+          id="desserts"
+          aria-label="Desserts"
+        >
+          <h2>🍰 Desserts</h2>
         </section>
 
-        <section id="drinks">
-          <h2>🍕 Drinks</h2>
+        <!-- Drinks -->
+        <section
+          id="drinks"
+          aria-label="Drinks"
+        >
+          <h2>🥤 Drinks</h2>
         </section>
       </section>
 
-      <section class="basket_section" id="basket"></section>
+      <!-- Shopping cart -->
+      <section
+        class="basket_section"
+        id="basket"
+        aria-label="Shopping cart"
+      ></section>
     </main>
-    <div class="total_delivery_price"></div>
 
+    <!-- Total price -->
+    <div
+      class="total_delivery_price"
+      aria-label="Order summary"
+    ></div>
+
+    <!-- ========================= -->
+    <!-- Footer -->
+    <!-- ========================= -->
     <footer class="footer">
       <div class="footer-container">
+        <!-- Logo and hotline -->
         <div class="footer-logo">
-          <img src="./assets/img/header_img-01.png" alt="Bestell App Logo" />
+          <img
+            src="./assets/img/header_img-01.png"
+            alt="Bestell App Logo"
+          />
 
           <h3>Bestell-Hotline</h3>
-          <a class="phone" href="tel:+491234567890"> ☎ +49 123 4567890 </a>
 
-          <p>Bestellungen schnell und einfach telefonisch oder online.</p>
+          <a
+            class="phone"
+            href="tel:+491234567890"
+            aria-label="Call our hotline"
+          >
+            ☎ +49 123 4567890
+          </a>
+
+          <p>
+            Bestellungen schnell und einfach telefonisch oder online.
+          </p>
         </div>
 
+        <!-- Legal links -->
         <div class="footer-links">
           <h3>Rechtliches</h3>
 
-          <a href="#">Impressum</a>
-          <a href="#">Datenschutz</a>
-          <a href="#">AGB</a>
+          <a href="#" aria-label="Impressum">
+            Impressum
+          </a>
+
+          <a href="#" aria-label="Datenschutzerklärung">
+            Datenschutz
+          </a>
+
+          <a href="#" aria-label="Allgemeine Geschäftsbedingungen">
+            AGB
+          </a>
         </div>
 
+        <!-- Contact information -->
         <div class="footer-contact">
           <h3>Kontakt</h3>
 
           <p>Musterstraße 10</p>
           <p>12345 Musterstadt</p>
 
-          <a href="https://maps.google.com" target="_blank">
+          <a
+            href="https://maps.google.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open Google Maps"
+          >
             📍 Anfahrt mit Google Maps
           </a>
 
-          <a href="mailto:info@bestellapp.de"> ✉ info@bestellapp.de </a>
+          <a
+            href="mailto:info@bestellapp.de"
+            aria-label="Send us an email"
+          >
+            ✉ info@bestellapp.de
+          </a>
         </div>
 
+        <!-- Opening hours -->
         <div class="footer-times">
           <h3>Öffnungszeiten</h3>
 
           <p>Mo - Fr: 11:00 - 22:00 Uhr</p>
           <p>Sa - So: 12:00 - 23:00 Uhr</p>
-
           <p>🚚 Liefergebiet: bis 10 km</p>
         </div>
       </div>
 
+      <!-- Copyright -->
       <div class="footer-bottom">
         © 2026 Bestell App • Alle Rechte vorbehalten.
       </div>
     </footer>
 
-   
+    <!-- JavaScript files -->
     <script src="./js/script.js"></script>
     <script src="./js/db.js"></script>
     <script src="./js/template.js"></script>

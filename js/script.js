@@ -135,9 +135,9 @@ for (let index = 0; index < mainDish.getränke.length; index++) {
               </div>
                   <h3 class="total_price_basket">Gesamt: ${finalPrice.toFixed(2)} €</h3>
  
-                <button class="order_button">
-                     Bestellen
-                </button>
+                    <button onclick="order()" class="order_button">
+                      Buy Now
+                    </button>
      
          </div>
 
@@ -195,7 +195,6 @@ basket.push(basketItem);
  renderBasket();
 }
 
-
 function removeFromBasket(id) {
 
     for (let index = 0; index < basket.length; index++) {
@@ -221,6 +220,24 @@ function removeFromBasket(id) {
     renderBasket();
 }
 
+function getRemoveButton(basketItem) {
 
+    if (basketItem.quantity === 1) {
+        return `<button class="basket_btn" onclick="removeFromBasket(${basketItem.id})">🗑️</button>`;
+    } else {
+        return `<button class="basket_btn" onclick="removeFromBasket(${basketItem.id})">➖</button>`;
+    }
+
+}
+
+function order() {
+
+    basket = [];
+
+    renderBasket();
+
+    alert("Vielen Dank! Ihre Bestellung ist unterwegs. 🍕");
+
+}
 
 
