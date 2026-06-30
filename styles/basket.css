@@ -1,17 +1,17 @@
 .basket_section{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin-top: 50px;
+   justify-content: flex-start;
+  
 
     background-color: #363534;
     border-radius: 10px;
     width:300px;
     min-width:300px;
-    min-height:300px;
+  
 
     position: sticky;
-    top: 10px;
+    top: 200px;
 }
 
 
@@ -57,7 +57,6 @@
    font-size: 16px;
    font-family: Arial, Helvetica, sans-serif;
 
-   color: var(--color-text-black);
    background-color: var( --color-basket-background);
 
    border-radius: 10px;
@@ -67,6 +66,8 @@
 .total_price_basket{
     font-size: 24px;
      white-space: nowrap;
+
+    
 }
 
 .order_button{
@@ -112,6 +113,8 @@
 
 .basket_item_price {
     text-align: center;
+font-size: 24px;
+    color: var( --color-text);
     margin-top: 8px;
     font-weight: bold;
 }

@@ -24,19 +24,23 @@ a {
   text-decoration: none;
 }
 
-.content_wrapper{
-  max-width: 1440px;
+.content_wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
 
-  margin: 0 auto;
-  display: flex;
-  align-items: flex-start;
-
+    
 }
-
 
 body {
     margin: 0;
     background-color: #f5f5f5;
 }
 
+
+main {
+    display: flex;
+    align-items: flex-start;
+}
 
