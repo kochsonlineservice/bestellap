@@ -55,7 +55,7 @@
     text-align: center;
 
     padding-top: 150px;
-    padding-bottom: 100px;
+   
 }
 
 .restaurant-info-subtitle{
@@ -142,7 +142,6 @@
 }
 
 
-
 .category-nav a {
     display: flex;
     align-items: center;
@@ -161,6 +160,80 @@
 .category-nav a:hover {
     color: var(--primary-dark);
 }
+
+/* ===========================
+   Category Header
+=========================== */
+
+.category_header {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    height: 72px;
+
+    margin: 48px 0 24px;
+    padding-left: 120px;
+
+    background-color: var(--color-orange);
+}
+
+.category_icon {
+    position: absolute;
+
+    left: 24px;
+    top: -26px;
+
+    width: 90px;
+    height: 90px;
+
+    object-fit: contain;
+}
+
+.category_header h2 {
+    margin: 0;
+
+    font-family: var(--font-text);
+    font-size: 36px;
+    font-weight: 700;
+
+    color: var(--color-white);
+}
+
+/* ===========================
+   dish-menu-style
+=========================== */
+
+.dish_header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dish_content {
+    display: flex;
+    flex-direction: column;
+}
+
+.add_button {
+    align-self: flex-end;
+    margin-top: auto;
+}
+
+
+.dish {
+    display: flex;
+    gap: 16px;
+}
+
+.dish_img {
+    width: 120px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
 
 /* =========================
   footer-style

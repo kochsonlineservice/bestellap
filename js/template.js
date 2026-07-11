@@ -10,26 +10,28 @@ function getDishTemplate(dish) {
 
       <div class="dish_content">
 
-        <div class="dish_top">
+        <div class="dish_header">
 
-          <h3 class="dishes_line">${dish.name}</h3>
+          <h3 class="dish_name">
+            ${dish.name}
+          </h3>
 
-          <button
-            onclick="addToBasket(${dish.id})"
-            class="btn-plus"
-          >
-            +
-          </button>
+          <p class="dish_price">
+            ${dish.price.toFixed(2)} €
+          </p>
 
         </div>
 
-        <p class="dish_price">
-          ${dish.price.toFixed(2)} €
-        </p>
-
-        <p class="dishes_line">
+        <p class="dish_description">
           ${dish.description}
         </p>
+
+        <button
+          onclick="addToBasket(${dish.id})"
+          class="add_button"
+        >
+          Add to basket
+        </button>
 
       </div>
 
