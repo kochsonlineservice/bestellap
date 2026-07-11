@@ -10,93 +10,115 @@ const deliveryCosts = 5;
 // =======================================
 
 function init() {
-  renderMainDishes();
-  renderDesserts();
-  renderDrinks();
-  renderBasket();
+    renderBurger();
+    renderPizza();
+    renderSalat();
+    renderGetraenke();
+    renderDessert();
+
+    renderBasket();
 }
 
 // =======================================
 // Render Menu Categories
 // =======================================
 
-function renderMainDishes() {
-  let html = `
-    <h2 class="category_title">🍕 Hauptgerichte</h2>
-  `;
+function renderBurger() {
+  let html = "";
 
-  let contentRef = document.getElementById("mainDishes");
+  let contentRef = document.getElementById("burger_content");
 
-  for (let index = 0; index < mainDish.hauptgerichte.length; index++) {
-    let dish = mainDish.hauptgerichte[index];
+  for (let index = 0; index < menu.burger.length; index++) {
+    let dish = menu.burger[index];
     html += getDishTemplate(dish);
   }
 
   contentRef.innerHTML = html;
 }
 
-function renderDesserts() {
-  let html = `
-    <h2 class="category_title">🍰 Nachspeisen</h2>
-  `;
+function renderPizza() {
+  let html = "";
 
-  let contentRef = document.getElementById("desserts");
+  let contentRef = document.getElementById("pizza_content");
 
-  for (let index = 0; index < mainDish.nachspeisen.length; index++) {
-    let dessert = mainDish.nachspeisen[index];
-    html += getDishTemplate(dessert);
+  for (let index = 0; index < menu.pizza.length; index++) {
+    let dish = menu.pizza[index];
+    html += getDishTemplate(dish);
   }
 
   contentRef.innerHTML = html;
 }
 
-function renderDrinks() {
-  let html = `
-    <h2 class="category_title">🥤 Getränke</h2>
-  `;
+function renderSalat() {
+  let html = "";
 
-  let contentRef = document.getElementById("drinks");
+  let contentRef = document.getElementById("salat_content");
 
-  for (let index = 0; index < mainDish.getränke.length; index++) {
-    let drink = mainDish.getränke[index];
-    html += getDishTemplate(drink);
+  for (let index = 0; index < menu.salat.length; index++) {
+    let dish = menu.salat[index];
+    html += getDishTemplate(dish);
   }
 
   contentRef.innerHTML = html;
 }
+
+function renderGetraenke() {
+  let html = "";
+
+  let contentRef = document.getElementById("getraenke_content");
+
+  for (let index = 0; index < menu.getraenke.length; index++) {
+    let dish = menu.getraenke[index];
+    html += getDishTemplate(dish);
+  }
+
+  contentRef.innerHTML = html;
+}
+
+function renderDessert() {
+  let html = "";
+
+  let contentRef = document.getElementById("dessert_content");
+
+  for (let index = 0; index < menu.dessert.length; index++) {
+    let dish = menu.dessert[index];
+    html += getDishTemplate(dish);
+  }
+
+  contentRef.innerHTML = html;
+}
+
 
 // =======================================
 // Basket Logic
 // =======================================
 
 function getDishById(id) {
-  // Search in main dishes
-  for (let index = 0; index < mainDish.hauptgerichte.length; index++) {
-    let dish = mainDish.hauptgerichte[index];
 
-    if (dish.id === id) {
-      return dish;
+    let categories = [
+        menu.burger,
+        menu.pizza,
+        menu.salat,
+        menu.getraenke,
+        menu.dessert
+    ];
+
+    for (let categoryIndex = 0; categoryIndex < categories.length; categoryIndex++) {
+
+        let currentCategory = categories[categoryIndex];
+
+        for (let dishIndex = 0; dishIndex < currentCategory.length; dishIndex++) {
+
+            let dish = currentCategory[dishIndex];
+
+            if (dish.id === id) {
+                return dish;
+            }
+        }
     }
-  }
-
-  // Search in desserts
-  for (let index = 0; index < mainDish.nachspeisen.length; index++) {
-    let dish = mainDish.nachspeisen[index];
-
-    if (dish.id === id) {
-      return dish;
-    }
-  }
-
-  // Search in drinks
-  for (let index = 0; index < mainDish.getränke.length; index++) {
-    let dish = mainDish.getränke[index];
-
-    if (dish.id === id) {
-      return dish;
-    }
-  }
 }
+
+  
 
 function addToBasket(id) {
   // Get selected dish
