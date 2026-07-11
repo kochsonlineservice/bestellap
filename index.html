@@ -27,17 +27,11 @@
       />
 
       <!-- Mobile navigation button -->
-      <button
-        class="hamburger-btn"
-        aria-label="Open shopping cart"
-      >
+      <button class="hamburger-btn" aria-label="Open shopping cart">
         <span></span>
         <span></span>
         <span></span>
       </button>
-
-      
-
     </header>
 
     <!-- ========================= -->
@@ -45,173 +39,144 @@
     <!-- ========================= -->
 
     <nav class="category-nav">
+      <a href="#burger">🍔 Burger</a>
 
-    <a href="#burger">🍔 Burger</a>
+      <a href="#pizza">🍕 Pizza</a>
 
-    <a href="#pizza">🍕 Pizza</a>
+      <a href="#salat">🥗 Salat</a>
 
-    <a href="#salat">🥗 Salat</a>
+      <a href="#getraenke">🥤 Getränke</a>
 
-    <a href="#getraenke">🥤 Getränke</a>
-
-    <a href="#dessert">🍰 Dessert</a>
-
-</nav>
-
-
-
-
+      <a href="#dessert">🍰 Dessert</a>
+    </nav>
 
     <!-- ========================= -->
     <!-- hero-sectio-img -->
     <!-- ========================= -->
     <section class="hero">
-    <img
+      <img
         class="hero_img"
         src="./assets/img/hero.jpg.webp"
-        alt="Burger, Pizza und Pommes">
+        alt="Burger, Pizza und Pommes"
+      />
     </section>
-
 
     <!-- ========================= -->
     <!-- restaurant-info section -->
     <!-- ========================= -->
-  <section class="restaurant_info">
+    <section class="restaurant_info">
+      <div class="restaurant_logo">
+        <img src="./assets/icons/restaurant_logo.jpg" alt="Restaurant Logo" />
+      </div>
 
-  <div class="restaurant_logo">
-    <img
-      src="./assets/icons/restaurant_logo.jpg"
-      alt="Restaurant Logo">
-  </div>
+      <div class="restaurant_header">
+        <h1 class="restaurant_name"><span>Burger</span><span>House</span></h1>
 
- <div class="restaurant_header">
+        <div class="restaurant_rating">⭐ 4,1 <span>(317)</span></div>
+      </div>
 
-    <h1 class="restaurant_name">
-        <span>Burger</span><span>House</span>
-    </h1>
+      <p class="restaurant-info-subtitle">
+        The best of Burgers, Pizza, and Greens, all in one great place.
+      </p>
+    </section>
 
-    <div class="restaurant_rating">
-        ⭐ 4,1 <span>(317)</span>
-    </div>
-
-</div>
-
-  <p class="restaurant-info-subtitle">
-    The best of Burgers, Pizza, and Greens, all in one great place.
-  </p>
-
-</section>
-
- <!-- ========================= -->
+    <!-- ========================= -->
     <!-- Main Content -->
     <!-- ========================= -->
-  <main class="content_wrapper">
-
-    <!-- Linke Seite -->
-   <!-- Linke Seite -->
-<section class="order_content">
-
-    <!-- Burger -->
-    <section id="burger">
-
-        <div class="category_header">
-
-            <img class="category_icon"
-     src="./assets/icons/burger.svg"
-     alt="Burger">
+    <main class="content_wrapper">
+      <!-- Linke Seite -->
+      
+      <section class="order_content">
+        <!-- Burger -->
+        <section id="burger">
+          <div class="category_header">
+            <img
+              class="category_icon"
+              src="./assets/icons/burger.svg"
+              alt="Burger"
+            />
 
             <h2>Burger</h2>
+          </div>
 
-        </div>
+          <div id="burger_content"></div>
+        </section>
 
-        <div id="burger_content"></div>
-
-    </section>
-
-    <!-- Pizza -->
-    <section id="pizza">
-
-        <div class="category_header">
-
+        <!-- Pizza -->
+        <section id="pizza">
+          <div class="category_header">
             <img
-                src="./assets/icons/pizza.png"
-                alt="Pizza">
+              class="category_icon"
+              src="./assets/icons/pizza.svg"
+              alt="Burger"
+            />
 
             <h2>Pizza</h2>
+          </div>
 
-        </div>
+          <div id="pizza_content"></div>
+        </section>
 
-        <div id="pizza_content"></div>
+        <!-- Salat -->
 
-    </section>
-
-    <!-- Salat -->
-    <section id="salat">
-
-        <div class="category_header">
-
+        <section id="salad">
+          <div class="category_header">
             <img
-                src="./assets/icons/salat.png"
-                alt="Salat">
+              class="category_icon"
+              src="./assets/icons/salad.svg"
+              alt="Burger"
+            />
 
             <h2>Salat</h2>
+          </div>
 
-        </div>
+          <div id="salat_content"></div>
+        </section>
 
-        <div id="salat_content"></div>
+        <!-- Getränke -->
 
-    </section>
-
-    <!-- Getränke -->
-    <section id="getraenke">
-
-        <div class="category_header">
-
+        <section id="drinks">
+          <div class="category_header">
             <img
-                src="./assets/icons/getraenke.png"
-                alt="Getränke">
+              class="category_icon"
+              src="./assets/icons/drinks.svg"
+              alt="Burger"
+            />
 
             <h2>Getränke</h2>
+          </div>
 
-        </div>
+          <div id="getraenke_content"></div>
+        </section>
 
-        <div id="getraenke_content"></div>
-
-    </section>
-
-    <!-- Dessert -->
-    <section id="dessert">
-
-        <div class="category_header">
-
+        <!-- Dessert -->
+        <section id="dessert">
+          <div class="category_header">
             <img
-                src="./assets/icons/dessert.png"
-                alt="Dessert">
+              class="category_icon"
+              src="./assets/icons/drinks.svg"
+              alt="Burger"
+            />
 
-            <h2>Dessert</h2>
+            <h2>Desserts</h2>
+          </div>
 
-        </div>
+          <div id="dessert_content"></div>
+        </section>
+      </section>
 
-        <div id="dessert_content"></div>
-
-    </section>
-
-</section>
-
-    <!-- Rechte Seite -->
-    <aside
+      <!-- Rechte Seite -->
+      <aside
         class="basket_section"
         id="basket"
-        aria-label="Shopping cart">
-    </aside>
-
-</main>
+        aria-label="Shopping cart"
+      ></aside>
+    </main>
 
     <!-- Total price -->
-    <div
-      class="total_delivery_price"
-      aria-label="Order summary"
-    ></div>
+    <div class="total_delivery_price" aria-label="Order summary">
+      
+    </div>
 
     <!-- ========================= -->
     <!-- Footer -->
@@ -220,10 +185,7 @@
       <div class="footer-container">
         <!-- Logo and hotline -->
         <div class="footer-logo">
-          <img
-            src="./assets/img/header_img-01.png"
-            alt="Bestell App Logo"
-          />
+          <img src="./assets/img/header_img-01.png" alt="Bestell App Logo" />
 
           <h3>Bestell-Hotline</h3>
 
@@ -235,26 +197,18 @@
             ☎ +49 123 4567890
           </a>
 
-          <p>
-            Bestellungen schnell und einfach telefonisch oder online.
-          </p>
+          <p>Bestellungen schnell und einfach telefonisch oder online.</p>
         </div>
 
         <!-- Legal links -->
         <div class="footer-links">
           <h3>Rechtliches</h3>
 
-          <a href="#" aria-label="Impressum">
-            Impressum
-          </a>
+          <a href="#" aria-label="Impressum"> Impressum </a>
 
-          <a href="#" aria-label="Datenschutzerklärung">
-            Datenschutz
-          </a>
+          <a href="#" aria-label="Datenschutzerklärung"> Datenschutz </a>
 
-          <a href="#" aria-label="Allgemeine Geschäftsbedingungen">
-            AGB
-          </a>
+          <a href="#" aria-label="Allgemeine Geschäftsbedingungen"> AGB </a>
         </div>
 
         <!-- Contact information -->
@@ -273,10 +227,7 @@
             📍 Anfahrt mit Google Maps
           </a>
 
-          <a
-            href="mailto:info@bestellapp.de"
-            aria-label="Send us an email"
-          >
+          <a href="mailto:info@bestellapp.de" aria-label="Send us an email">
             ✉ info@bestellapp.de
           </a>
         </div>

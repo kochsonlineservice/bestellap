@@ -1,3 +1,7 @@
+ /* =========================
+ header
+========================= */
+ 
  header{
      position: relative;
      height: 100px;
@@ -204,27 +208,92 @@
 /* ===========================
    dish-menu-style
 =========================== */
+.dish_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+  .dish {
+    display: flex;
+    gap: 24px;
+
+    padding: 16px;
+    margin-bottom: 16px;
+
+    background-color: var(--color-basket-background);
+    border-radius: 16px;
+}
+
+
+.dishes_line {
+  line-height: 1.5;
+}
+
+
+.btn-plus {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    background: #ff8000;
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 4px 12px rgba(255, 128, 0, 0.35);
+}
+
+.btn-plus:hover {
+    background: #ff9500;
+    transform: scale(1.08);
+}
+
+.btn-plus:active {
+    transform: scale(0.95);
+}
+
+.dish_price {
+    font-size: 20px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
 
 .dish_header {
-    display: flex;
+     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
 }
 
 .dish_content {
     display: flex;
     flex-direction: column;
+    flex: 1;
+
+    position: relative;
 }
 
 .add_button {
-    align-self: flex-end;
-    margin-top: auto;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    width: 48px;
+    height: 48px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: var(--color-orange);
+    color: var(--color-white);
+
+    font-size: 28px;
+    cursor: pointer;
 }
 
-
-.dish {
-    display: flex;
-    gap: 16px;
-}
 
 .dish_img {
     width: 120px;

@@ -30,7 +30,7 @@ function getDishTemplate(dish) {
           onclick="addToBasket(${dish.id})"
           class="add_button"
         >
-          Add to basket
+         +
         </button>
 
       </div>
@@ -69,4 +69,3 @@ function getBasketTemplate(basketItem) {
   `;
 }
 
-renderBasket();
