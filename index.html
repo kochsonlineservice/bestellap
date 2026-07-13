@@ -16,6 +16,7 @@
   </head>
 
   <body onload="init()">
+
     <!-- ========================= -->
     <!-- Header -->
     <!-- ========================= -->
@@ -83,95 +84,146 @@
     <!-- ========================= -->
     <!-- Main Content -->
     <!-- ========================= -->
-    <main class="content_wrapper">
-      <!-- Linke Seite -->
-      
-      <section class="order_content">
+   <main class="content_wrapper">
+
+    <!-- Linke Seite -->
+    <section class="order_content">
+
         <!-- Burger -->
-        <section id="burger">
-          <div class="category_header">
-            <img
-              class="category_icon"
-              src="./assets/icons/burger.svg"
-              alt="Burger"
-            />
+        <section class="category_section" id="burger">
 
-            <h2>Burger</h2>
-          </div>
+            <div class="category_header">
 
-          <div id="burger_content"></div>
+                <img
+                    class="category_icon"
+                    src="./assets/icons/burger.svg"
+                    alt="Burger">
+
+                <h2>Burger</h2>
+
+            </div>
+
+            <div class="category_body">
+
+                <div
+                    id="burger_content"
+                    class="category_content">
+                </div>
+
+            </div>
+
         </section>
 
         <!-- Pizza -->
-        <section id="pizza">
-          <div class="category_header">
-            <img
-              class="category_icon"
-              src="./assets/icons/pizza.svg"
-              alt="Burger"
-            />
+        <section class="category_section" id="pizza">
 
-            <h2>Pizza</h2>
-          </div>
+            <div class="category_header">
 
-          <div id="pizza_content"></div>
+                <img
+                    class="category_icon"
+                    src="./assets/icons/pizza.svg"
+                    alt="Pizza">
+
+                <h2>Pizza</h2>
+
+            </div>
+
+            <div class="category_body">
+
+                <div
+                    id="pizza_content"
+                    class="category_content">
+                </div>
+
+            </div>
+
         </section>
 
         <!-- Salat -->
+        <section class="category_section" id="salat">
 
-        <section id="salad">
-          <div class="category_header">
-            <img
-              class="category_icon"
-              src="./assets/icons/salad.svg"
-              alt="Burger"
-            />
+            <div class="category_header">
 
-            <h2>Salat</h2>
-          </div>
+                <img
+                    class="category_icon"
+                    src="./assets/icons/salad.svg"
+                    alt="Salat">
 
-          <div id="salat_content"></div>
+                <h2>Salat</h2>
+
+            </div>
+
+            <div class="category_body">
+
+                <div
+                    id="salat_content"
+                    class="category_content">
+                </div>
+
+            </div>
+
         </section>
 
         <!-- Getränke -->
+        <section class="category_section" id="getraenke">
 
-        <section id="drinks">
-          <div class="category_header">
-            <img
-              class="category_icon"
-              src="./assets/icons/drinks.svg"
-              alt="Burger"
-            />
+            <div class="category_header">
 
-            <h2>Getränke</h2>
-          </div>
+                <img
+                    class="category_icon"
+                    src="./assets/icons/drinks.svg"
+                    alt="Getränke">
 
-          <div id="getraenke_content"></div>
+                <h2>Getränke</h2>
+
+            </div>
+
+            <div class="category_body">
+
+                <div
+                    id="getraenke_content"
+                    class="category_content">
+                </div>
+
+            </div>
+
         </section>
 
         <!-- Dessert -->
-        <section id="dessert">
-          <div class="category_header">
-            <img
-              class="category_icon"
-              src="./assets/icons/drinks.svg"
-              alt="Burger"
-            />
+        <section class="category_section" id="dessert">
 
-            <h2>Desserts</h2>
-          </div>
+            <div class="category_header">
 
-          <div id="dessert_content"></div>
+                <img
+                    class="category_icon"
+                    src="./assets/icons/dessert.svg"
+                    alt="Dessert">
+
+                <h2>Desserts</h2>
+
+            </div>
+
+            <div class="category_body">
+
+                <div
+                    id="dessert_content"
+                    class="category_content">
+                </div>
+
+            </div>
+
         </section>
-      </section>
 
-      <!-- Rechte Seite -->
-      <aside
+    </section>
+
+    <!-- Rechte Seite -->
+    <aside
         class="basket_section"
         id="basket"
-        aria-label="Shopping cart"
-      ></aside>
-    </main>
+        aria-label="Shopping cart">
+    </aside>
+
+</main>
 
     <!-- Total price -->
     <div class="total_delivery_price" aria-label="Order summary">
@@ -252,5 +304,7 @@
     <script src="./js/script.js"></script>
     <script src="./js/db.js"></script>
     <script src="./js/template.js"></script>
+
+     
   </body>
 </html>

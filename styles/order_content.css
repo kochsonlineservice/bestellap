@@ -1,18 +1,23 @@
 
 
 .order_content {
-  width: calc(100% - 300px);
-  min-height: 300px;
-  background-color:var(--color-white);
-  padding: 16px;
-
-  max-width: 900px;
-
-  margin-top: 50px;
-   
+    flex: 1;
+    margin-top: 0;
+    padding: 0;
 }
+/* =========================
+   Category Section
+========================= */
 
+.category_section {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+  
+      width: 100%;
 
+      margin-bottom: 48px;
+}
 
 
 .category_title {

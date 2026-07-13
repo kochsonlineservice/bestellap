@@ -3,19 +3,17 @@
     flex-direction: column;
     justify-content: flex-start;
 
-    width: 300px;
-    min-width: 300px;
+    width: 280px;
+    min-width: 280px;
 
-    margin-top: 110px;
+    
     padding-bottom: 16px;
 
     background-color: var(--color-dark);
     border-radius: 20px;
 
     position: sticky;
-    top: 200px;
-
-     
+    top: 110px;
 }
 
 .basket_title {
