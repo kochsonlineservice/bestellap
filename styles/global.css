@@ -91,13 +91,7 @@ main {
 }
 
 
-.basket_section {
 
-    width: 320px;
-
-    flex-shrink: 0;
-
-}
 
 
 /* =========================
@@ -148,8 +142,3 @@ main {
 
 }
 
-.basket_top{
-    position: absolute;
-    top: 165px;
-    right: calc((100vw - 1920px) / 2 - 222px);
-}
