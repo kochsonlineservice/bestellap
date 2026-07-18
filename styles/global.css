@@ -57,7 +57,7 @@ body {
 main {
     display: flex;
     align-items: flex-start;
-   
+    position: relative;
 }
 
 
@@ -78,17 +78,9 @@ main {
 ========================= */
 
 .content_wrapper {
-
-    max-width: 1440px;
-
-    margin: 0 auto;
-
-    display: flex;
-
-    align-items: flex-start;
-
-    gap: 24px;
-
+ max-width: 1440px;
+ width: 100%;
+ margin: 0 auto;
 }
 
 
@@ -154,4 +146,10 @@ main {
 
     margin: 0;
 
+}
+
+.basket_top{
+    position: absolute;
+    top: 165px;
+    right: calc((100vw - 1920px) / 2 - 222px);
 }
