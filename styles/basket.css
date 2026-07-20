@@ -1,137 +1,133 @@
 .basket_section {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 
-    min-width: 280px;
+  min-width: 280px;
 
-    padding-bottom: 16px;
+  padding-bottom: 16px;
 
-    background-color: var(--color-dark);
-    border-radius: 20px;
-
-    position: sticky;
-    
-   
-   
+  background-color: var(--color-dark);
+  border-radius: 20px;
 }
 
-.basket_top{
-    position: absolute;
-   
-    right: calc((100vw - 1920px) / 2 - 222px);
+.basket_top {
+  position: sticky;
+  top: 0;
+  margin-top: 32px;
+  align-self: flex-start;
+  flex-shrink: 0;
 }
 
 .basket_title {
-    font-size: 36px;
-    text-align: center;
-    color: var(--color-white);
+  font-size: 36px;
+  text-align: center;
+  color: var(--color-white);
 
-    margin: 24px 0;
+  margin: 24px 0;
 }
 
-
 .basket_item_header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .basket_items {
-    margin: 16px;
-    padding: 16px;
+  margin: 16px;
+  padding: 16px;
 
-    background-color: var(--color-basket-background);
+  background-color: var(--color-basket-background);
 
-    border-radius: 18px;
+  border-radius: 18px;
 }
 
 .basket_item_name {
-    flex: 1;
+  flex: 1;
 
-    margin: 0;
+  margin: 0;
 
-    text-align: center;
-    font-size: 20px;
-    font-weight: 600;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
 
-    color: var(--color-text);
+  color: var(--color-text);
 }
 
 .basket_item_price {
-    margin-top: 12px;
+  margin-top: 12px;
 
-    text-align: right;
-    font-size: 20px;
-    font-weight: 700;
+  text-align: right;
+  font-size: 20px;
+  font-weight: 700;
 
-    color: var(--color-text);
+  color: var(--color-text);
 }
 
 .total_delivery_price {
-    width: 100%;
+  width: 100%;
 
-    margin-top: 16px;
+  margin-top: 16px;
 
-    color: var(--color-white);
-    font-size: 18px;
+  color: var(--color-white);
+  font-size: 18px;
 }
 
 .total_price_basket {
-    width: calc(100% - 32px);
+  width: calc(100% - 32px);
 
-    margin: 16px;
-    padding-top: 16px;
+  margin: 16px;
+  padding-top: 16px;
 
-    border-top: 2px solid rgba(255,255,255,0.2);
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
 
-    color: var(--color-white);
+  color: var(--color-white);
 
-    font-size: 26px;
-    font-weight: 700;
-    text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
 }
 
 .order_button {
-    width: calc(100% - 32px);
-    height: 56px;
+  width: calc(100% - 32px);
+  height: 56px;
 
-    margin: 16px;
+  margin: 16px;
 
-    background-color: var(--color-orange);
-    color: var(--color-white);
+  background-color: var(--color-orange);
+  color: var(--color-white);
 
-    border: none;
-    border-radius: 30px;
+  border: none;
+  border-radius: 30px;
 
-    font-size: 22px;
-    font-weight: 600;
+  font-size: 22px;
+  font-weight: 600;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    transition: var(--transition);
+  transition: var(--transition);
 }
 
 .order_button:hover {
-    background-color: var(--color-orange-hover);
-    transform: scale(1.03);
+  background-color: var(--color-orange-hover);
+  transform: scale(1.03);
 }
 
 .basket_btn {
-    background: none;
-    border: none;
+  background: none;
+  border: none;
 
-    font-size: 20px;
+  font-size: 20px;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    transition: var(--transition);
+  transition: var(--transition);
 }
 
 .basket_btn:hover {
-    transform: scale(1.15);
+  transform: scale(1.15);
 }
 
 .basket_btn:active {
-    transform: scale(0.95);
+  transform: scale(0.95);
 }
