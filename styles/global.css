@@ -5,13 +5,13 @@ globale styles
 :root {
   /* Fonts */
 
-  --font-logo: "Great Vibes", cursive;
-  --font-text: "Poppins", sans-serif;
-  --font-subtitle: "Palanquin", sans-serif;
-
+   --font-logo: "Great Vibes", cursive;
+    --font-text: "Poppins", sans-serif;
+    --font-subtitle: "Palanquin", sans-serif;
+    --font-heading: "Palanquin Dark", sans-serif;
   /* Colors */
 
-  --color-orange: #ff8000;
+  --color-orange: #E76C1F;
   --color-orange-hover: #ff9800;
   --color-dark: #363534;
   --color-background: #fdeadc;
@@ -73,6 +73,11 @@ main {
   margin: 0 auto;
 }
 
+#burger_content {
+    max-width: 713px;
+}
+
+
 .menu_content {
   flex: 1;
   min-width: 0;
@@ -85,21 +90,30 @@ main {
 .category_bar {
   display: flex;
   align-items: center;
+
+  height: 91px;
   gap: 24px;
   width: 100vw;
   margin: 32px 0 20px;
   padding: 12px;
   background: var(--color-orange);
-  border-radius: 10px;
+  
 }
 
 .category_icon {
-  width: 60px;
-  height: 60px;
+  width: 88px;
+  height: 91px;
   object-fit: contain;
 }
 
 .category_bar h2 {
+  font-family: var(--font-subtitle);
+    font-weight: 700;
+    font-style: normal;
+    font-size: 40px;
+    line-height: 120%;
+    letter-spacing: 0;
+
   color: white;
   display: inline-block;
   font-size: 32px;
@@ -107,8 +121,9 @@ main {
 }
 
 .category_bar .content_wrapper {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  max-width: 1640px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    max-width: 1640px;
+    padding-left: 50px;
 }

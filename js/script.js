@@ -265,3 +265,22 @@ function order() {
 
   alert("Vielen Dank! Ihre Bestellung ist unterwegs. 🍕");
 }
+
+
+
+const toTopButton = document.querySelector(".to-top");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 500) {
+        toTopButton.style.display = "block";
+    } else {
+        toTopButton.style.display = "none";
+    }
+});
+
+toTopButton.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
+});
