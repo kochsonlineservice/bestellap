@@ -119,7 +119,6 @@ function getDishById(id) {
 }
 
   
-
 function addToBasket(id) {
   // Get selected dish
   let dish = getDishById(id);
@@ -155,6 +154,14 @@ function addToBasket(id) {
   }
 
   renderBasket();
+
+  // Change button text
+  let button = document.querySelector(`#add-button-${id}`);
+  let basketItem = basket.find((item) => item.id === id);
+
+  if (button && basketItem) {
+    button.textContent = `Added ${basketItem.quantity}`;
+  }
 }
 
 function removeFromBasket(id) {
@@ -172,6 +179,18 @@ function removeFromBasket(id) {
   }
 
   renderBasket();
+
+  // Update Add to basket button
+  let button = document.querySelector(`#add-button-${id}`);
+  let basketItem = basket.find((item) => item.id === id);
+
+  if (button) {
+    if (basketItem) {
+      button.textContent = `Added ${basketItem.quantity}`;
+    } else {
+      button.textContent = "Add to basket";
+    }
+  }
 }
 
 // =======================================

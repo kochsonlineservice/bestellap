@@ -73,7 +73,11 @@ main {
   margin: 0 auto;
 }
 
-#burger_content {
+#burger_content,
+#pizza_content,
+#salat_content,
+#getraenke_content,
+#dessert_content {
     max-width: 713px;
 }
 
@@ -86,8 +90,13 @@ main {
 /* =========================
    Category Bar
 ========================= */
+.content_wrapper{
+ 
+ 
+}
 
 .category_bar {
+  position: relative;
   display: flex;
   align-items: center;
 
@@ -101,10 +110,12 @@ main {
 }
 
 .category_icon {
-  width: 88px;
-  height: 91px;
-  object-fit: contain;
-}
+  position: absolute;
+  bottom: -2px;
+  left: 10em;
+  width: auto;
+  height: 124px;
+ }
 
 .category_bar h2 {
   font-family: var(--font-subtitle);
@@ -115,15 +126,11 @@ main {
     letter-spacing: 0;
 
   color: white;
-  display: inline-block;
+  
   font-size: 32px;
-  margin: 0;
+
+  margin-left: 15em;
+  
 }
 
-.category_bar .content_wrapper {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    max-width: 1640px;
-    padding-left: 50px;
-}
+

@@ -27,11 +27,12 @@ function getDishTemplate(dish) {
         </p>
 
         <button
-          onclick="addToBasket(${dish.id})"
-          class="add_button"
-        >
-         +
-        </button>
+  id="add-button-${dish.id}"
+  onclick="addToBasket(${dish.id})"
+  class="add_button"
+>
+  Add to basket
+</button>
 
       </div>
 
