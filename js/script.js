@@ -5,19 +5,20 @@
 let basket = [];
 const deliveryCosts = 5;
 
+
 // =======================================
 // Initialization
 // =======================================
 
 function init() {
-    renderBurger();
-    renderPizza();
-    renderSalat();
-    renderGetraenke();
-    renderDessert();
-
-    renderBasket();
+  renderBurger();
+  renderPizza();
+  renderSalat();
+  renderGetraenke();
+  renderDessert();
+  renderBasket();
 }
+
 
 // =======================================
 // Render Menu Categories
@@ -25,7 +26,6 @@ function init() {
 
 function renderBurger() {
   let html = "";
-
   let contentRef = document.getElementById("burger_content");
 
   for (let index = 0; index < menu.burger.length; index++) {
@@ -36,9 +36,9 @@ function renderBurger() {
   contentRef.innerHTML = html;
 }
 
+
 function renderPizza() {
   let html = "";
-
   let contentRef = document.getElementById("pizza_content");
 
   for (let index = 0; index < menu.pizza.length; index++) {
@@ -49,9 +49,9 @@ function renderPizza() {
   contentRef.innerHTML = html;
 }
 
+
 function renderSalat() {
   let html = "";
-
   let contentRef = document.getElementById("salat_content");
 
   for (let index = 0; index < menu.salat.length; index++) {
@@ -62,9 +62,9 @@ function renderSalat() {
   contentRef.innerHTML = html;
 }
 
+
 function renderGetraenke() {
   let html = "";
-
   let contentRef = document.getElementById("getraenke_content");
 
   for (let index = 0; index < menu.getraenke.length; index++) {
@@ -75,9 +75,9 @@ function renderGetraenke() {
   contentRef.innerHTML = html;
 }
 
+
 function renderDessert() {
   let html = "";
-
   let contentRef = document.getElementById("dessert_content");
 
   for (let index = 0; index < menu.dessert.length; index++) {
@@ -94,31 +94,28 @@ function renderDessert() {
 // =======================================
 
 function getDishById(id) {
+  let categories = [
+    menu.burger,
+    menu.pizza,
+    menu.salat,
+    menu.getraenke,
+    menu.dessert,
+  ];
 
-    let categories = [
-        menu.burger,
-        menu.pizza,
-        menu.salat,
-        menu.getraenke,
-        menu.dessert
-    ];
+  for (let categoryIndex = 0; categoryIndex < categories.length; categoryIndex++) {
+    let currentCategory = categories[categoryIndex];
 
-    for (let categoryIndex = 0; categoryIndex < categories.length; categoryIndex++) {
+    for (let dishIndex = 0; dishIndex < currentCategory.length; dishIndex++) {
+      let dish = currentCategory[dishIndex];
 
-        let currentCategory = categories[categoryIndex];
-
-        for (let dishIndex = 0; dishIndex < currentCategory.length; dishIndex++) {
-
-            let dish = currentCategory[dishIndex];
-
-            if (dish.id === id) {
-                return dish;
-            }
-        }
+      if (dish.id === id) {
+        return dish;
+      }
     }
+  }
 }
 
-  
+
 function addToBasket(id) {
   // Get selected dish
   let dish = getDishById(id);
@@ -164,6 +161,7 @@ function addToBasket(id) {
   }
 }
 
+
 function removeFromBasket(id) {
   // Reduce quantity or remove item completely
   for (let index = 0; index < basket.length; index++) {
@@ -175,6 +173,8 @@ function removeFromBasket(id) {
       } else {
         currentBasketItem.quantity--;
       }
+
+      break;
     }
   }
 
@@ -193,27 +193,50 @@ function removeFromBasket(id) {
   }
 }
 
+
 // =======================================
 // Basket Rendering
 // =======================================
 
 function renderBasket() {
   let html = `
-    <h4 class="basket_title">🛒 Warenkorb</h4>
+    <h4 class="basket_title">🛒 Your Basket</h4>
   `;
 
   let contentRef = document.getElementById("basket");
-
   let totalPrice = 0;
 
-  // Render all basket items
-  for (let index = 0; index < basket.length; index++) {
-    let basketItem = basket[index];
-
-    totalPrice += basketItem.price * basketItem.quantity;
-
-    html += getBasketTemplate(basketItem);
+  // Render empty basket message
+  if (basket.length === 0) {
+    html += `
+      <div class="empty_basket">
+        <p>Nothing here yet.</p>
+        <p>Go ahead and choose something delicious!</p>
+        <span class="empty_basket_icon">🛒</span>
+      </div>
+    `;
   }
+
+
+  // Render basket items
+  if (basket.length > 0) {
+    html += `
+      <div class="basket_items_container">
+    `;
+
+    for (let index = 0; index < basket.length; index++) {
+      let basketItem = basket[index];
+
+      totalPrice += basketItem.price * basketItem.quantity;
+
+      html += getBasketTemplate(basketItem);
+    }
+
+    html += `
+      </div>
+    `;
+  }
+
 
   // Show total only when basket is not empty
   if (basket.length > 0) {
@@ -230,17 +253,25 @@ function renderBasket() {
       <div class="basket_total">
 
         <div class="total_delivery_price">
-          <p>Zwischensumme: ${totalPrice.toFixed(2)} €</p>
-          <p>Lieferkosten: ${currentDeliveryCosts.toFixed(2)} €</p>
-        </div>
+  <p>
+    <span>Subtotal</span>
+    <span>${totalPrice.toFixed(2)} €</span>
+  </p>
 
-        <h3 class="total_price_basket">
-          Gesamt: ${finalPrice.toFixed(2)} €
-        </h3>
+  <p>
+    <span>Delivery fee</span>
+    <span>${currentDeliveryCosts.toFixed(2)} €</span>
+  </p>
+</div>
+
+        <div class="total_price_basket">
+  <span>Total</span>
+  <span>${finalPrice.toFixed(2)} €</span>
+</div>
 
         <button onclick="order()" class="order_button">
-          Buy Now
-        </button>
+  Buy now (${finalPrice.toFixed(2)} €)
+</button>
 
       </div>
     `;
@@ -248,6 +279,7 @@ function renderBasket() {
 
   contentRef.innerHTML = html;
 }
+
 
 function getRemoveButton(basketItem) {
   if (basketItem.quantity === 1) {
@@ -273,6 +305,7 @@ function getRemoveButton(basketItem) {
   `;
 }
 
+
 // =======================================
 // Order
 // =======================================
@@ -286,20 +319,24 @@ function order() {
 }
 
 
+// =======================================
+// Back to Top Button
+// =======================================
 
 const toTopButton = document.querySelector(".to-top");
 
 window.addEventListener("scroll", () => {
-    if (window.scrollY > 500) {
-        toTopButton.style.display = "block";
-    } else {
-        toTopButton.style.display = "none";
-    }
+  if (window.scrollY > 500) {
+    toTopButton.style.display = "block";
+  } else {
+    toTopButton.style.display = "none";
+  }
 });
 
+
 toTopButton.addEventListener("click", () => {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-    });
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
 });
