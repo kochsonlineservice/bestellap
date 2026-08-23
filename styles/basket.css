@@ -52,8 +52,8 @@
 ======================================== */
 
 .basket_items {
-    margin: 16px;
-    padding: 16px;
+    margin: 10px 16px;
+    padding: 10px 16px;
 
     background-color: var(--color-basket-background);
     border-radius: 20px;
@@ -71,10 +71,17 @@
     align-items: center;
 }
 
+.basket_item_price {
+    margin: 0;
+    line-height: 1;
+}
+
 .basket_item_name {
     flex: 1;
 
     margin: 0;
+
+    line-height: 1.1;
 
     color: var(--color-text);
 
@@ -95,6 +102,13 @@
     text-align: right;
 }
 
+.basket_item_footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    margin-top:3px;
+}
 
 /* ========================================
    BASKET BUTTONS
@@ -234,20 +248,3 @@
     transform: scale(1.03);
 }
 
-
-/* ========================================
-   RESPONSIVE
-   Move this part to media.css
-======================================== */
-
-/*
-@media (max-width: 1300px) {
-    .basket_section {
-        display: none;
-    }
-
-    .order_content {
-        width: 100%;
-    }
-}
-*/

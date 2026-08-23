@@ -3,5 +3,7 @@
 @import url('./styles/basket.css');
 @import url('./styles/assets.css');
 @import url('./styles/header-footer.css');
+@import url("./styles/mobile_nav.css");
+
 
 @import url('./styles/order_content.css');

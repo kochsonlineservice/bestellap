@@ -278,6 +278,12 @@ function renderBasket() {
   }
 
   contentRef.innerHTML = html;
+
+let dialogContentRef = document.getElementById("basket_dialog_content");
+
+if (dialogContentRef) {
+  dialogContentRef.innerHTML = html;
+}
 }
 
 
@@ -335,6 +341,27 @@ window.addEventListener("scroll", () => {
 
 
 toTopButton.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
+
+
+
+
+function openBasketDialog() {
+    document.getElementById("basket_dialog").classList.add("show_dialog");
+}
+
+function closeBasketDialog() {
+    document.getElementById("basket_dialog").classList.remove("show_dialog");
+}
+
+
+const homeButton = document.getElementById("home_button");
+
+homeButton.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
     behavior: "smooth",

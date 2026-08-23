@@ -161,8 +161,7 @@
           </div>
         </div>
 
-       <div class="content_wrapper" id="dessert_content"></div>
-
+        <div class="content_wrapper" id="dessert_content"></div>
       </section>
 
       <div class="basket_top">
@@ -179,6 +178,33 @@
 
     <!-- Total price -->
     <div class="total_delivery_price" aria-label="Order summary"></div>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile_nav">
+      <button
+    id="home_button"
+    class="mobile_nav_button"
+    aria-label="Startseite">
+
+    <img src="./assets/icons/home-icon.svg" alt="">
+</button>
+
+      <button class="mobile_nav_button" aria-label="Profil">
+        <img src="./assets/icons/profile-icon.svg" alt="" />
+      </button>
+
+      <button class="mobile_nav_button" aria-label="Bestellungen">
+        <img src="./assets/icons/orders-icon.svg" alt="" />
+      </button>
+
+    <button
+    class="mobile_nav_button"
+    aria-label="Warenkorb"
+    onclick="openBasketDialog()">
+
+    <img src="./assets/icons/basket-icon.svg" alt="">
+</button>
+    </nav>
 
     <!-- ========================= -->
     <!-- Footer -->
@@ -249,6 +275,38 @@
         © 2026 Bestell App • Alle Rechte vorbehalten.
       </div>
     </footer>
+
+    <footer class="mobile_footer">
+      <div class="mobile_footer_logo">Bestell App</div>
+
+      <div class="mobile_footer_links">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+      </div>
+
+      <div class="mobile_footer_contact">
+        <p>Kontakt</p>
+        <a href="tel:+491234567890">+49 123 4567890</a>
+      </div>
+    </footer>
+
+
+    <!-- Mobile Basket Dialog -->
+<div id="basket_dialog" class="basket_dialog">
+    <div class="basket_dialog_content">
+
+        <button
+            class="basket_dialog_close"
+            onclick="closeBasketDialog()"
+            aria-label="Warenkorb schließen">
+            ×
+        </button>
+
+        <div id="basket_dialog_content">
+        </div>
+
+    </div>
+</div>
 
     <!-- JavaScript files -->
     <script src="./js/script.js"></script>

@@ -45,26 +45,28 @@ function getBasketTemplate(basketItem) {
   return `
     <div class="basket_items">
 
-      <div class="basket_item_header">
+      <p class="basket_item_name">
+        ${basketItem.quantity}x ${basketItem.name}
+      </p>
 
-        ${getRemoveButton(basketItem)}
+      <div class="basket_item_footer">
 
-        <p class="basket_item_name">
-          ${basketItem.quantity}x ${basketItem.name}
+        <div class="basket_quantity_controls">
+          ${getRemoveButton(basketItem)}
+
+          <button
+            class="basket_btn"
+            onclick="addToBasket(${basketItem.id})"
+          >
+            ➕
+          </button>
+        </div>
+
+        <p class="basket_item_price">
+          ${(basketItem.price * basketItem.quantity).toFixed(2)} €
         </p>
 
-        <button
-          class="basket_btn"
-          onclick="addToBasket(${basketItem.id})"
-        >
-          ➕
-        </button>
-
       </div>
-
-      <p class="basket_item_price">
-        ${(basketItem.price * basketItem.quantity).toFixed(2)} €
-      </p>
 
     </div>
   `;

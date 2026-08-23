@@ -23,6 +23,7 @@ header {
     object-fit: contain;
 }
 
+
 .header img {
     display: block;
 
@@ -44,7 +45,6 @@ header {
     padding: 12px 8px;
 
     background-color: var(--color-orange);
-
     border: none;
 
     cursor: pointer;
