@@ -349,13 +349,12 @@ toTopButton.addEventListener("click", () => {
 
 
 
-
 function openBasketDialog() {
-    document.getElementById("basket_dialog").classList.add("show_dialog");
+    document.getElementById("basket_dialog").showModal();
 }
 
 function closeBasketDialog() {
-    document.getElementById("basket_dialog").classList.remove("show_dialog");
+    document.getElementById("basket_dialog").close();
 }
 
 

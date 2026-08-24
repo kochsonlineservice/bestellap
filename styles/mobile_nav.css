@@ -27,19 +27,19 @@
 ======================================== */
 
 .basket_dialog {
-    display: none;
+    width: calc(100% - 48px);
+    max-width: 500px;
 
-    position: fixed;
-    inset: 0;
-
-    z-index: 2000;
+    padding: 0;
+    margin: auto;
 
     background-color: var(--color-dark);
+    border: none;
+    border-radius: 16px;
 }
 
-.basket_dialog.show_dialog {
-    display: flex;
-    flex-direction: column;
+.basket_dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .basket_dialog_content {

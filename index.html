@@ -13,6 +13,21 @@
 
     <!-- Main stylesheet -->
     <link rel="stylesheet" href="./style.css" />
+
+    <link rel="icon" type="image/png" href="./assets/icons/favicon.png" />
+
+    <!-- Vorschau für WhatsApp & andere Apps -->
+    <meta property="og:title" content="Bestell App" />
+    <meta property="og:description" content="Meine mobile Bestell-App" />
+    <meta
+      property="og:image"
+      content="https://ralphkoch.developerakademie.net/bestellapp/assets/img/preview.png"
+    />
+    <meta
+      property="og:url"
+      content="https://ralphkoch.developerakademie.net/bestellapp/"
+    />
+    <meta property="og:type" content="website" />
   </head>
 
   <body onload="init()">
@@ -182,12 +197,12 @@
     <!-- Mobile Bottom Navigation -->
     <nav class="mobile_nav">
       <button
-    id="home_button"
-    class="mobile_nav_button"
-    aria-label="Startseite">
-
-    <img src="./assets/icons/home-icon.svg" alt="">
-</button>
+        id="home_button"
+        class="mobile_nav_button"
+        aria-label="Startseite"
+      >
+        <img src="./assets/icons/home-icon.svg" alt="" />
+      </button>
 
       <button class="mobile_nav_button" aria-label="Profil">
         <img src="./assets/icons/profile-icon.svg" alt="" />
@@ -197,13 +212,13 @@
         <img src="./assets/icons/orders-icon.svg" alt="" />
       </button>
 
-    <button
-    class="mobile_nav_button"
-    aria-label="Warenkorb"
-    onclick="openBasketDialog()">
-
-    <img src="./assets/icons/basket-icon.svg" alt="">
-</button>
+      <button
+        class="mobile_nav_button"
+        aria-label="Warenkorb"
+        onclick="openBasketDialog()"
+      >
+        <img src="./assets/icons/basket-icon.svg" alt="" />
+      </button>
     </nav>
 
     <!-- ========================= -->
@@ -290,23 +305,20 @@
       </div>
     </footer>
 
-
     <!-- Mobile Basket Dialog -->
-<div id="basket_dialog" class="basket_dialog">
-    <div class="basket_dialog_content">
-
+    <dialog id="basket_dialog" class="basket_dialog">
+      <div class="basket_dialog_content">
         <button
-            class="basket_dialog_close"
-            onclick="closeBasketDialog()"
-            aria-label="Warenkorb schließen">
-            ×
+          class="basket_dialog_close"
+          onclick="closeBasketDialog()"
+          aria-label="Warenkorb schließen"
+        >
+          ×
         </button>
 
-        <div id="basket_dialog_content">
-        </div>
-
-    </div>
-</div>
+        <div id="basket_dialog_content"></div>
+      </div>
+    </dialog>
 
     <!-- JavaScript files -->
     <script src="./js/script.js"></script>
