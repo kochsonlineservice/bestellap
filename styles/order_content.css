@@ -1,763 +1,620 @@
-/* ========================================
-   RESTAURANT INFORMATION
-======================================== */
-
 .restaurant_info {
-    position: relative;
+  position: relative;
 
-    padding-top: 150px;
+  padding-top: 150px;
 
-    background-color: var(--color-white);
-    text-align: center;
+  background-color: var(--color-white);
+
+  text-align: center;
 }
 
 .restaurant_header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    gap: 16px;
+  gap: 16px;
 }
 
 .restaurant_name {
-    margin: 0;
+  margin: 0;
 
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 120%;
-    letter-spacing: 0;
+  color: var(--color-dark);
+
+  font-family: var(--font-heading);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 120%;
 }
 
 .restaurant_name span:first-child {
-    margin-right: 4px;
+  margin-right: 4px;
 
-    color: var(--color-orange);
+  color: var(--color-orange);
 }
 
 .restaurant_name span:last-child {
-    color: var(--color-dark);
+  color: var(--color-dark);
 }
 
 .restaurant_rating {
-    font-family: var(--font-heading);
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 120%;
-    letter-spacing: 0;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 120%;
 }
 
 .restaurant-info-subtitle {
-    margin: 0 0 3em;
-    padding-top: 10px;
+  margin: 0 0 3em;
+  padding-top: 10px;
 
-    color: var(--color-dark);
+  color: var(--color-dark);
 
-    font-family: var(--font-subtitle);
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 120%;
-
-    text-align: center;
+  font-family: var(--font-subtitle);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 120%;
 }
 
-
-/* ========================================
-   RESTAURANT LOGO
-======================================== */
-
 .restaurant_logo {
-    position: absolute;
+  position: absolute;
+  top: -70px;
+  left: 50%;
 
-    top: -70px;
-    left: 50%;
-
-    transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .restaurant_logo img {
-    width: 200px;
-    height: 200px;
+  width: 200px;
+  height: 200px;
 
-    object-fit: cover;
+  border: 6px solid var(--color-white);
+  border-radius: 50%;
 
-    border: 6px solid var(--color-white);
-    border-radius: 50%;
+  object-fit: cover;
 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-
-/* ========================================
-
 .category_header {
-    position: relative;
+  position: relative;
 
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    width: 100%;
-    height: 70px;
+  width: 100%;
+  height: 70px;
 
-    padding-left: 120px;
+  padding-left: 120px;
 
-    background-color: var(--color-orange);
-    border-radius: 10px;
+  background-color: var(--color-orange);
+  border-radius: 10px;
 }
 
 .category_body {
-    padding: 16px 0;
+  padding: 16px 0;
 }
 
 .category_bar .content_wrapper {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    gap: 6px;
+  gap: 6px;
 }
 
-
-/* ========================================
-   DISH MENU
-======================================== */
-
 .dish {
-    display: flex;
+  display: flex;
 
-    gap: 24px;
-    padding: 16px;
-    margin-bottom: 16px;
+  gap: 24px;
+  margin-bottom: 16px;
+  padding: 16px;
 
-    background-color: var(--color-basket-background);
-    border-radius: 16px;
+  background-color: var(--color-basket-background);
+  border-radius: 16px;
 }
 
 .dish_img {
-    width: 207px;
-    height: 126px;
+  width: 207px;
+  height: 126px;
 
-    flex-shrink: 0;
+  flex-shrink: 0;
 
-    border-radius: 10px;
-    object-fit: contain;
+  border-radius: 10px;
+
+  object-fit: contain;
 }
 
 .dish_content {
-    position: relative;
+  position: relative;
 
-    display: flex;
-    flex: 1;
-    flex-direction: column;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 }
 
 .dish_header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .dish_top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .dishes_line {
-    line-height: 1.5;
+  line-height: 1.5;
 }
 
-.dish-name {
-    margin: 0;
+.dish_name {
+  margin: 0;
 
-    font-family: var(--font-subtitle);
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 100%;
-    letter-spacing: 0;
+  color: var(--color-dark);
 
-    color: #363534;
+  font-family: var(--font-subtitle);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 100%;
 }
 
 .dish_price {
-    margin: 0;
+  margin: 0;
 
-    font-family: var(--font-subtitle);
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 120%;
-    letter-spacing: 0;
+  color: var(--color-dark);
 
-    color: #363534;
+  font-family: var(--font-subtitle);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 120%;
 
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 .dish_description {
-    margin: 0;
+  margin: 0;
 
-    font-family: var(--font-subtitle);
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 120%;
-    letter-spacing: 0;
+  color: var(--color-dark);
 
-    color: #363534;
+  font-family: var(--font-subtitle);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 120%;
 }
 
-
-/* ========================================
-   DISH BUTTONS
-======================================== */
-
 .btn-plus {
-    width: 42px;
-    height: 42px;
+  width: 42px;
+  height: 42px;
 
-    border: none;
-    border-radius: 50%;
+  border: none;
+  border-radius: 50%;
 
-    background-color: var(--color-orange);
-    color: var(--color-white);
+  background-color: var(--color-orange);
+  color: var(--color-white);
 
-    font-size: 26px;
-    font-weight: 700;
+  font-size: 26px;
+  font-weight: 700;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    transition: 0.2s;
-    box-shadow: 0 4px 12px rgba(255, 128, 0, 0.35);
+  box-shadow: 0 4px 12px rgba(255, 128, 0, 0.35);
+
+  transition: 0.2s;
 }
 
 .btn-plus:hover {
-    background-color: #ff9500;
+  background-color: #ff9500;
 
-    transform: scale(1.08);
+  transform: scale(1.08);
 }
 
 .btn-plus:active {
-    transform: scale(0.95);
+  transform: scale(0.95);
 }
 
 .add_button {
-    position: absolute;
-    right: 0;
-    bottom: 0;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 
-    width: auto;
-    height: 29px;
-    padding: 5px 8px;
+  width: auto;
+  height: 29px;
 
-    border: none;
-    border-radius: 20px;
+  padding: 5px 8px;
 
-    white-space: nowrap;
+  border: none;
+  border-radius: 20px;
 
-    background-color: var(--color-white);
-    color: #000;
+  background-color: var(--color-white);
+  color: #000;
 
-    cursor: pointer;
+  font-family: var(--font-subtitle);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 120%;
 
-    font-family: var(--font-subtitle);
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 120%;
-    letter-spacing: 0;
+  white-space: nowrap;
+
+  cursor: pointer;
 }
-
-
-/* ========================================
-   TO TOP BUTTON
-======================================== */
 
 .to-top {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
 
-    z-index: 100;
+  z-index: 100;
 }
 
-
-
-
-
-/* ========================================
-   RESPONSIVE DESIGN
-======================================== */
-
-
-/* ========================================
-   TABLET / SMALL DESKTOP
-   1300px and smaller
-======================================== */
-
 @media (max-width: 1300px) {
+  .basket_section {
+    display: none;
+  }
 
-    .basket_section {
-        display: none;
-    }
-
-    .order_content {
-        width: 100%;
-    }
+  .order_content {
+    width: 100%;
+  }
 }
 
 @media (max-width: 1100px) {
-
-
-    .dish_content {
+  .dish_content {
     position: relative;
+
     padding-bottom: 40px;
-}
+  }
 
-.dish_header {
+  .dish_header {
     display: block;
-}
+  }
 
-.dish_price {
+  .dish_price {
     position: absolute;
+    bottom: 0;
     left: 0;
-    bottom: 0;
-}
+  }
 
-.add_button {
-    bottom: 0;
+  .add_button {
     right: 0;
-}
-    .category-nav {
-        gap: 24px;
-    }
+    bottom: 0;
+  }
 
-    .category-nav a {
-        font-size: 28px;
-    }
+  .category-nav {
+    gap: 24px;
+  }
+
+  .category-nav a {
+    font-size: 28px;
+  }
 }
 
 @media (max-width: 768px) {
+  .restaurant_header {
+    flex-direction: column;
 
-    /* =========================
-       Restaurant Info
-    ========================= */
+    gap: 4px;
+  }
 
-    .restaurant_header {
-        flex-direction: column;
-        gap: 4px;
-    }
+  .restaurant_rating {
+    order: -1;
 
-    .restaurant_rating {
-        font-size: 16px;
-    }
+    font-size: 16px;
+  }
 
-    .restaurant_rating {
-        order: -1;
-        font-size: 16px;
-    }
+  .dish_content {
+    position: relative;
 
+    padding-bottom: 40px;
+  }
 
-    /* =========================
-       Dish Content
-    ========================= */
+  .dish_header {
+    display: block;
+  }
 
-    .dish_content {
-        position: relative;
-        padding-bottom: 40px;
-    }
+  .dish_price {
+    position: absolute;
+    bottom: 0;
+    left: 0;
 
-    .dish_header {
-        display: block;
-    }
+    font-size: 24px;
+  }
 
-    .dish_price {
-        position: absolute;
-        left: 0;
-        bottom: 0;
+  .add_button {
+    right: 0;
+    bottom: 0;
 
-        font-size: 24px;
-    }
+    font-size: 16px;
+  }
 
-    .add_button {
-        right: 0;
-        bottom: 0;
+  .category-nav a {
+    font-size: 24px;
+  }
 
-        font-size: 16px;
-    }
+  .category_bar .content_wrapper {
+    flex-direction: column;
+    justify-content: center;
 
+    gap: 0;
+  }
 
-    /* =========================
-       Category Navigation
-    ========================= */
+  .category_icon {
+    position: absolute;
+    top: -40px;
+    left: 50%;
 
-    .category-nav a {
-        font-size: 24px;
-    }
+    width: 80px;
+    height: 80px;
 
+    transform: translateX(-50%);
 
-    /* =========================
-       Category Header
-    ========================= */
+    z-index: 2;
+  }
 
-    .category_bar .content_wrapper {
-        flex-direction: column;
-        justify-content: center;
-        gap: 0;
-    }
+  .category_header {
+    height: 56px;
 
-    .category_icon {
-        position: absolute;
-        top: -40px;
-        left: 50%;
+    padding-left: 0;
+  }
 
-        transform: translateX(-50%);
+  .category_bar h2 {
+    margin: 120px 0 12px;
 
-        width: 80px;
-        height: 80px;
+    font-size: 18px;
+    line-height: 1;
 
-        z-index: 2;
-    }
+    text-align: center;
+  }
 
-    .category_header {
-        height: 56px;
-        padding-left: 0;
-    }
+  .dish {
+    gap: 24px;
+    margin-bottom: 16px;
+    padding: 16px;
+  }
 
-    .category_bar h2 {
-        margin: 120px 0 12px 0;
+  .dish_img {
+    width: 207px;
+    height: 126px;
+  }
 
-        font-size: 18px;
-        line-height: 1;
-        text-align: center;
-    }
+  .dish_name {
+    font-size: 24px;
+  }
 
+  .dish_description {
+    font-size: 16px;
+  }
 
-    /* =========================
-       Dish Cards
-    ========================= */
-
-    .dish {
-        gap: 24px;
-        padding: 16px;
-        margin-bottom: 16px;
-    }
-
-    .dish_img {
-        width: 207px;
-        height: 126px;
-    }
-
-    .dish-name {
-        font-size: 24px;
-    }
-
-    .dish_description {
-        font-size: 16px;
-    }
-
-
-    /* =========================
-       Content Spacing
-    ========================= */
-
-    .content_wrapper {
-        margin-bottom: 80px;
-    }
+  .content_wrapper {
+    margin-bottom: 80px;
+  }
 }
 
 @media (max-width: 600px) {
+  header {
+    height: 72px;
+  }
 
-    /* =========================
-       Header
-    ========================= */
+  .img_logo {
+    width: 70px;
+    height: auto;
 
-    header {
-        height: 72px;
-    }
+    margin-left: 24px;
+  }
 
-    .img_logo {
-        width: 70px;
-        height: auto;
-        margin-left: 24px;
-    }
+  .hamburger-btn {
+    width: 50px;
+    height: 50px;
+  }
 
-    .hamburger-btn {
-        width: 50px;
-        height: 50px;
-    }
+  .hamburger-btn img {
+    width: 32px;
+    height: 32px;
 
-    .hamburger-btn img {
-        width: 32px;
-        height: 32px;
-        margin-right: 0;
-    }
+    margin-right: 0;
+  }
 
+  .category-nav {
+    gap: 24px;
+  }
 
-    /* =========================
-       Category Navigation
-    ========================= */
+  .category-nav a {
+    font-size: 18px;
+  }
 
-    .category-nav {
-        gap: 24px;
-    }
+  .restaurant-info-subtitle {
+    font-size: 18px;
+  }
 
-    .category-nav a {
-        font-size: 18px;
-    }
+  .category_bar h2 {
+    margin: 120px 0 12px;
 
+    font-size: 28px;
+    line-height: 1;
 
-    /* =========================
-       Restaurant Info
-    ========================= */
+    text-align: center;
+  }
 
-    .restaurant-info-subtitle {
-        font-size: 18px;
-    }
+  .dish {
+    gap: 16px;
+    margin-bottom: 14px;
+    padding: 14px;
+  }
 
+  .dish_img {
+    width: 150px;
+    height: 110px;
+  }
 
-    /* =========================
-       Category Header
-    ========================= */
+  .dish_name {
+    font-size: 20px;
+  }
 
-    .category_bar h2 {
-        margin: 120px 0 12px 0;
-        font-size: 28px;
-        line-height: 1;
-        text-align: center;
-    }
+  .dish_price {
+    font-size: 20px;
+  }
 
+  .dish_description {
+    font-size: 14px;
+  }
 
-    /* =========================
-       Dish Cards
-    ========================= */
+  .add_button {
+    height: 32px;
 
-    .dish {
-        gap: 16px;
-        padding: 14px;
-        margin-bottom: 14px;
-    }
+    padding: 5px 10px;
 
-    .dish_img {
-        width: 150px;
-        height: 110px;
-    }
-
-    .dish-name {
-        font-size: 20px;
-    }
-
-    .dish_price {
-        font-size: 20px;
-    }
-
-    .dish_description {
-        font-size: 14px;
-    }
-
-    .add_button {
-        height: 32px;
-        padding: 5px 10px;
-        font-size: 14px;
-    }
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 480px) {
+  header {
+    height: 64px;
+  }
 
-    /* =========================
-       Header
-    ========================= */
+  .img_logo {
+    width: 60px;
 
-    header {
-        height: 64px;
-    }
+    margin-left: 16px;
+  }
 
-    .img_logo {
-        width: 60px;
-        margin-left: 16px;
-    }
+  .hamburger-btn {
+    width: 44px;
+    height: 44px;
+  }
 
-    .hamburger-btn {
-        width: 44px;
-        height: 44px;
-    }
+  .hamburger-btn img {
+    width: 28px;
+    height: 28px;
+  }
 
-    .hamburger-btn img {
-        width: 28px;
-        height: 28px;
-    }
+  .category-nav {
+    gap: 14px;
+  }
 
+  .category-nav a {
+    font-size: 16px;
+  }
 
-    /* =========================
-       Category Navigation
-    ========================= */
+  .restaurant_name {
+    font-size: 36px;
+  }
 
-    .category-nav {
-        gap: 14px;
-    }
+  .restaurant_rating {
+    font-size: 16px;
+  }
 
-    .category-nav a {
-        font-size: 16px;
-    }
+  .restaurant-info-subtitle {
+    font-size: 16px;
+  }
 
+  .category_bar h2 {
+    font-size: 24px;
+  }
 
-    /* =========================
-       Restaurant Info
-    ========================= */
+  .dish {
+    gap: 12px;
+    margin-bottom: 12px;
+    padding: 12px;
+  }
 
-    .restaurant_name {
-        font-size: 36px;
-    }
+  .dish_img {
+    width: 120px;
+    height: 90px;
+  }
 
-    .restaurant_rating {
-        font-size: 16px;
-    }
+  .dish_name,
+  .dish_price {
+    font-size: 18px;
+  }
 
-    .restaurant-info-subtitle {
-        font-size: 16px;
-    }
+  .dish_description {
+    font-size: 13px;
+  }
 
+  .add_button {
+    height: 30px;
 
-    /* =========================
-       Category Header
-    ========================= */
+    padding: 4px 8px;
 
-    .category_bar h2 {
-        font-size: 24px;
-    }
-
-
-    /* =========================
-       Dish Cards
-    ========================= */
-
-    .dish {
-        gap: 12px;
-        padding: 12px;
-        margin-bottom: 12px;
-    }
-
-    .dish_img {
-        width: 120px;
-        height: 90px;
-    }
-
-    .dish-name,
-    .dish_price {
-        font-size: 18px;
-    }
-
-    .dish_description {
-        font-size: 13px;
-    }
-
-    .add_button {
-        height: 30px;
-        padding: 4px 8px;
-        font-size: 13px;
-    }
+    font-size: 13px;
+  }
 }
 
 @media (max-width: 380px) {
+  header {
+    height: 60px;
+  }
 
-    /* =========================
-       Header
-    ========================= */
+  .img_logo {
+    width: 55px;
 
-    header {
-        height: 60px;
-    }
+    margin-left: 12px;
+  }
 
-    .img_logo {
-        width: 55px;
-        margin-left: 12px;
-    }
+  .hamburger-btn {
+    width: 40px;
+    height: 40px;
+  }
 
-    .hamburger-btn {
-        width: 40px;
-        height: 40px;
-    }
+  .hamburger-btn img {
+    width: 26px;
+    height: 26px;
+  }
 
-    .hamburger-btn img {
-        width: 26px;
-        height: 26px;
-    }
+  .category-nav {
+    gap: 10px;
+  }
 
+  .category-nav a {
+    font-size: 16px;
+  }
 
-    /* =========================
-       Category Navigation
-    ========================= */
+  .restaurant_name {
+    font-size: 30px;
+  }
 
-    .category-nav {
-        gap: 10px;
-    }
+  .restaurant_rating {
+    font-size: 16px;
+  }
 
-    .category-nav a {
-        font-size: 16px;
-    }
+  .restaurant-info-subtitle {
+    font-size: 16px;
+  }
 
+  .category_icon {
+    width: 70px;
+    height: 70px;
+  }
 
-    /* =========================
-       Restaurant Info
-    ========================= */
+  .category_bar h2 {
+    font-size: 20px;
+  }
 
-    .restaurant_name {
-        font-size: 30px;
-    }
+  .dish {
+    gap: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
 
-    .restaurant_rating {
-        font-size: 16px;
-    }
+  .dish_img {
+    width: 100px;
+    height: 80px;
+  }
 
-    .restaurant-info-subtitle {
-        font-size: 16px;
-    }
+  .dish_name,
+  .dish_price {
+    font-size: 16px;
+  }
 
+  .dish_description {
+    font-size: 16px;
+  }
 
-    /* =========================
-       Category Header
-    ========================= */
+  .add_button {
+    height: 32px;
 
-    .category_icon {
-        width: 70px;
-        height: 70px;
-    }
+    padding: 4px 8px;
 
-    .category_bar h2 {
-        font-size: 20px;
-    }
-
-
-    /* =========================
-       Dish Cards
-    ========================= */
-
-    .dish {
-        gap: 10px;
-        padding: 10px;
-        margin-bottom: 10px;
-    }
-
-    .dish_img {
-        width: 100px;
-        height: 80px;
-    }
-
-    .dish-name,
-    .dish_price {
-        font-size: 16px;
-    }
-
-    .dish_description {
-        font-size: 16px;
-    }
-
-    .add_button {
-        height: 32px;
-        padding: 4px 8px;
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 320px) {
-
-    /* Hier passen wir nur an,
-       was bei 320 px wirklich Probleme macht */
-
+    font-size: 16px;
+  }
 }

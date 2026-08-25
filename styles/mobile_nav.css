@@ -18,16 +18,12 @@
   cursor: pointer;
 }
 
-/* ========================================
-   BASKET DIALOG
-======================================== */
-
 .basket_dialog {
   width: calc(100% - 48px);
   max-width: 500px;
 
-  padding: 0;
   margin: auto;
+  padding: 0;
 
   background-color: var(--color-dark);
   border: none;
@@ -40,61 +36,58 @@
 
 .basket_dialog_content {
   position: relative;
-  
-  min-height: 300px;
-  width: 100%;
-  height: 100%;
 
- 
+  width: 100%;
+  min-height: 300px;
+
   padding: 14px;
 }
 
 .basket_dialog_close {
-     display: flex;
-justify-content: center;
-align-items: center;
-
   position: absolute;
   top: 10px;
   right: 20px;
 
-  padding: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  background: var(--color-orange);
   width: 30px;
   height: 30px;
 
+  padding: 0;
+
+  background-color: var(--color-orange);
   border: 2px solid var(--color-orange);
   border-radius: 50%;
+
   color: var(--color-white);
-  font-size: 50px;
+
+  font-size: 24px;
+  line-height: 1;
 
   cursor: pointer;
 }
 
 .basket_count {
+  position: absolute;
+  top: 0.5em;
+  left: -0.5em;
+
   display: flex;
   justify-content: center;
   align-items: center;
-
-  font-size: 24px;
-
-  color: var(--color-orange);
-  position: absolute;
-  top: 0.5em;
-  right: 0;
-  left: -0.5em;
 
   width: 30px;
   height: 30px;
 
   border: 2px solid var(--color-orange);
   border-radius: 50%;
-}
 
-/* ========================================
-   MOBILE FOOTER
-======================================== */
+  color: var(--color-orange);
+
+  font-size: 24px;
+}
 
 .mobile_footer {
   display: none;
@@ -107,37 +100,26 @@ align-items: center;
   text-align: center;
 }
 
-/* ========================================
-   MOBILE
-======================================== */
-
 @media (max-width: 1300px) {
-  /* ========================================
-       MOBILE NAVIGATION
-    ======================================== */
-
   .mobile_nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 32px;
-
-    padding: 16px 0;
-
     position: fixed;
     bottom: 0;
     left: 0;
     z-index: 1000;
 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
     width: 100%;
 
+    gap: 32px;
+    padding: 16px 0;
+
     background-color: var(--color-dark);
+
     font-size: 24px;
   }
-
-  /* ========================================
-       FOOTER
-    ======================================== */
 
   .footer {
     display: none;
@@ -147,6 +129,7 @@ align-items: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+
     gap: 16px;
   }
 
@@ -158,18 +141,21 @@ align-items: center;
 
   .mobile_footer_links {
     display: flex;
+
     gap: 20px;
   }
 
   .mobile_footer_links a,
   .mobile_footer_contact a {
     color: var(--color-white);
-    text-decoration: none;
+
     font-size: 16px;
+    text-decoration: none;
   }
 
   .mobile_footer_contact p {
-    margin: 0 0 6px 0;
+    margin: 0 0 6px;
+
     font-weight: 700;
   }
 }

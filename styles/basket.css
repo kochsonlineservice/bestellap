@@ -1,368 +1,323 @@
-/* ========================================
-   BASKET SECTION
-======================================== */
-
 .basket_section {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 
-    min-width: 280px;
-    width: 435px;
-    height: 794px;
+  min-width: 280px;
+  width: 435px;
+  height: 794px;
 
-    padding-bottom: 16px;
+  padding-bottom: 16px;
 
-    background-color: var(--color-dark);
-    border-radius: 20px;
+  background-color: var(--color-dark);
+  border-radius: 20px;
 }
 
 .basket_top {
-    position: sticky;
-    top: 0;
+  position: sticky;
+  top: 0;
 
-    align-self: flex-start;
-    flex-shrink: 0;
+  align-self: flex-start;
+  flex-shrink: 0;
 
-    margin-top: 32px;
+  margin-top: 32px;
 }
-
-
-/* ========================================
-   BASKET TITLE
-======================================== */
 
 .basket_title {
-    margin: 24px 0;
+  margin: 24px 0;
 
-    color: var(--color-white);
+  color: var(--color-white);
 
-    font-family: var(--font-subtitle);
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 120%;
-    letter-spacing: 0;
+  font-family: var(--font-subtitle);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: 0;
 
-    text-align: center;
+  text-align: center;
 }
 
-
-/* ========================================
-   BASKET ITEMS
-======================================== */
-
 .basket_items {
-    margin: 10px 16px;
-    padding: 10px 16px;
+  margin: 10px 16px;
+  padding: 10px 16px;
 
-    background-color: var(--color-basket-background);
-    border-radius: 20px;
+  background-color: var(--color-basket-background);
+  border-radius: 20px;
 
-    font-family: var(--font-subtitle);
-    font-weight: 700;
-    font-size: 22px;
-    line-height: 120%;
-    letter-spacing: 0;
+  font-family: var(--font-subtitle);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: 0;
 }
 
 .basket_item_header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.basket_item_price {
-    margin: 0;
-    line-height: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .basket_item_name {
-    flex: 1;
+  flex: 1;
 
-    margin: 0;
+  margin: 0;
 
-    line-height: 1.1;
+  color: var(--color-text);
 
-    color: var(--color-text);
-
-    font-size: 20px;
-    font-weight: 600;
-    text-align: center;
-}
-
-.basket_item_price {
-    min-width: 70px;
-
-    margin-top: 12px;
-
-    color: var(--color-text);
-
-    font-size: 20px;
-    font-weight: 700;
-    text-align: right;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.1;
+  text-align: center;
 }
 
 .basket_item_footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 
-    margin-top:3px;
+  margin-top: 3px;
 }
 
-/* ========================================
-   BASKET BUTTONS
-======================================== */
-.mobile_nav_button{
-    position: relative;
+.basket_item_price {
+  min-width: 70px;
+
+  margin: 12px 0 0;
+
+  color: var(--color-text);
+
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: right;
+}
+
+.mobile_nav_button {
+  position: relative;
 }
 
 .basket_btn {
-    border: none;
+  border: none;
 
-    background: none;
+  background: none;
 
-    font-size: 20px;
+  font-size: 20px;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    transition: var(--transition);
+  transition: var(--transition);
 }
 
 .basket_btn:hover {
-    transform: scale(1.15);
+  transform: scale(1.15);
 }
 
 .basket_btn:active {
-    transform: scale(0.95);
+  transform: scale(0.95);
 }
 
-
-/* ========================================
-   EMPTY BASKET
-======================================== */
-
 .empty_basket {
-    color: whitesmoke;
+  color: whitesmoke;
 
-    text-align: center;
+  text-align: center;
 }
 
 .empty_basket_icon {
-    display: block;
+  display: block;
 
-    margin-top: 20px;
+  margin-top: 20px;
 
-    font-size: 80px;
+  font-size: 80px;
 }
-
-
-/* ========================================
-   BASKET ITEMS SCROLL AREA
-======================================== */
 
 .basket_items_container {
-    height: 350px;
+  height: 350px;
 
-    overflow-y: auto;
+  overflow-y: auto;
 }
 
-
-/* ========================================
-   BASKET PRICES
-======================================== */
-
 .total_delivery_price {
-    width: calc(100% - 52px);
+  width: calc(100% - 52px);
 
-    margin: 0 auto;
+  margin: 0 auto;
 
-    color: var(--color-white);
+  color: var(--color-white);
 
-    font-family: var(--font-subtitle);
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 120%;
-    letter-spacing: 0;
+  font-family: var(--font-subtitle);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: 0;
 }
 
 .total_delivery_price p {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 
-    padding-top: 10px;
-    padding-bottom: 10px;
+  padding: 10px 0;
 }
 
 .total_price_basket {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 
-    width: calc(100% - 52px);
+  width: calc(100% - 52px);
 
-    margin: 0 auto;
-    padding-top: 16px;
-    padding-bottom: 16px;
+  margin: 0 auto;
+  padding: 16px 0;
 
-    border-top: 2px solid whitesmoke;
+  border-top: 2px solid whitesmoke;
 
-    color: var(--color-white);
+  color: var(--color-white);
 
-    font-family: var(--font-subtitle);
-    font-weight: 700;
-    font-size: 22px;
-    line-height: 120%;
-    letter-spacing: 0;
+  font-family: var(--font-subtitle);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: 0;
 }
 
-
-/* ========================================
-   ORDER BUTTON
-======================================== */
-
 .order_button {
-    width: calc(100% - 32px);
-    height: 56px;
+  width: calc(100% - 32px);
+  height: 56px;
 
-    margin: 16px;
+  margin: 16px;
 
-    background-color: var(--color-orange);
-    color: var(--color-white);
+  background-color: var(--color-orange);
+  border: none;
+  border-radius: 30px;
 
-    border: none;
-    border-radius: 30px;
+  color: var(--color-white);
 
-    font-family: var(--font-subtitle);
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 120%;
-    letter-spacing: 0;
+  font-family: var(--font-subtitle);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: 0;
 
-    text-align: center;
+  text-align: center;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    transition: var(--transition);
+  transition: var(--transition);
 }
 
 .order_button:hover {
-    background-color: var(--color-orange-hover);
+  background-color: var(--color-orange-hover);
 
-    transform: scale(1.03);
+  transform: scale(1.03);
 }
 
-
-
-/* ========================================
-   ORDER DIALOG
-======================================== */
-
-
-
 .order_dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
 
-     position: fixed;
-    top: 50%;
-    left: 50%;
+  width: calc(100% - 48px);
+  max-width: 500px;
 
-    transform: translate(-50%, -50%);
-    width: calc(100% - 48px);
-    max-width: 500px;
+  padding: 0;
 
-    padding: 0;
+  transform: translate(-50%, -50%);
 
-    background-color: var(--color-dark);
-    border: none;
-    border-radius: 20px;
+  background-color: var(--color-dark);
+  border: none;
+  border-radius: 20px;
 }
 
 .order_dialog::backdrop {
-    background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .order_dialog_content {
-    position: relative;
+  position: relative;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    padding: 48px 32px 32px;
+  padding: 48px 32px 32px;
 
-    text-align: center;
+  text-align: center;
 }
 
 .order_dialog_close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    width: 36px;
-    height: 36px;
+  width: 36px;
+  height: 36px;
 
-    background-color: var(--color-orange);
-    border: none;
-    border-radius: 50%;
+  background-color: var(--color-orange);
+  border: none;
+  border-radius: 50%;
 
-    color: var(--color-white);
-    font-size: 28px;
+  color: var(--color-white);
 
-    cursor: pointer;
+  font-size: 28px;
+
+  cursor: pointer;
 }
 
 .order_dialog_icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    width: 70px;
-    height: 70px;
+  width: 70px;
+  height: 70px;
 
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 
-    background-color: var(--color-orange);
-    border-radius: 50%;
+  background-color: var(--color-orange);
+  border-radius: 50%;
 
-    color: var(--color-dark);
-    font-size: 40px;
+  color: var(--color-dark);
+
+  font-size: 40px;
 }
 
 .order_dialog_content h2 {
-    margin: 0 0 16px;
+  margin: 0 0 16px;
 
-    color: var(--color-white);
+  color: var(--color-white);
 }
 
 .order_dialog_content p {
-    max-width: 350px;
-    margin: 0 0 24px;
+  max-width: 350px;
 
-    color: var(--color-white);
-    line-height: 1.5;
+  margin: 0 0 24px;
+
+  color: var(--color-white);
+
+  line-height: 1.5;
 }
 
 .order_dialog_delivery {
-    margin-bottom: 24px;
+  margin-bottom: 24px;
 
-    color: var(--color-orange);
-    font-size: 48px;
+  color: var(--color-orange);
+
+  font-size: 48px;
 }
 
 .order_dialog_button {
-    width: 100%;
-    padding: 14px;
+  width: 100%;
 
-    background-color: var(--color-orange);
-    border: none;
-    border-radius: 10px;
+  padding: 14px;
 
-    color: var(--color-white);
-    font-size: 18px;
-    font-weight: 700;
+  background-color: var(--color-orange);
+  border: none;
+  border-radius: 10px;
 
-    cursor: pointer;
+  color: var(--color-white);
+
+  font-size: 18px;
+  font-weight: 700;
+
+  cursor: pointer;
 }

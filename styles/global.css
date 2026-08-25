@@ -1,17 +1,10 @@
-/* =========================
-globale styles
-========================= */
-
 :root {
-  /* Fonts */
+  --font-logo: "Great Vibes", cursive;
+  --font-text: "Poppins", sans-serif;
+  --font-subtitle: "Palanquin", sans-serif;
+  --font-heading: "Palanquin Dark", sans-serif;
 
-   --font-logo: "Great Vibes", cursive;
-    --font-text: "Poppins", sans-serif;
-    --font-subtitle: "Palanquin", sans-serif;
-    --font-heading: "Palanquin Dark", sans-serif;
-  /* Colors */
-
-  --color-orange: #E76C1F;
+  --color-orange: #e76c1f;
   --color-orange-hover: #ff9800;
   --color-dark: #363534;
   --color-background: #fdeadc;
@@ -19,14 +12,10 @@ globale styles
   --color-text: #333333;
   --color-basket-background: #f8e6d8;
 
-  /* Layout */
-
   --max-width: 1440px;
   --radius-small: 8px;
   --radius-medium: 12px;
   --radius-large: 20px;
-
-  /* Effects */
 
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   --transition: 0.3s ease;
@@ -44,9 +33,12 @@ a {
 
 body {
   margin: 0;
-  font-family: var(--font-text);
-  background-color: var(--color-white);
+
   overflow-x: hidden;
+
+  background-color: var(--color-white);
+
+  font-family: var(--font-text);
 }
 
 main {
@@ -55,7 +47,8 @@ main {
 }
 
 .page {
-  max-width: 1440px;
+  max-width: var(--max-width);
+
   margin: 0 auto;
 }
 
@@ -63,13 +56,10 @@ main {
   background-color: var(--color-white);
 }
 
-/* =========================
-   Main Layout
-========================= */
-
 .content_wrapper {
-  max-width: 1440px;
   width: 100%;
+  max-width: var(--max-width);
+
   margin: 0 auto;
 }
 
@@ -78,59 +68,48 @@ main {
 #salat_content,
 #getraenke_content,
 #dessert_content {
-    max-width: 713px;
+  max-width: 713px;
 }
-
 
 .menu_content {
   flex: 1;
   min-width: 0;
 }
 
-/* =========================
-   Category Bar
-========================= */
-.content_wrapper{
- 
- 
-}
-
 .category_bar {
   position: relative;
+
   display: flex;
   align-items: center;
 
-  height: 91px;
-  gap: 24px;
   width: 100vw;
+  height: 91px;
+
+  gap: 24px;
   margin: 32px 0 20px;
   padding: 12px;
-  background: var(--color-orange);
-  
+
+  background-color: var(--color-orange);
 }
 
 .category_icon {
   position: absolute;
   bottom: -2px;
   left: 20em;
+
   width: auto;
   height: 124px;
- }
-
-.category_bar h2 {
-  font-family: var(--font-subtitle);
-    font-weight: 700;
-    font-style: normal;
-    font-size: 40px;
-    line-height: 120%;
-    letter-spacing: 0;
-
-  color: white;
-  
-  font-size: 32px;
-
-  margin-left: 15em;
-  
 }
 
+.category_bar h2 {
+  margin-left: 15em;
 
+  color: var(--color-white);
+
+  font-family: var(--font-subtitle);
+  font-size: 32px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 120%;
+  letter-spacing: 0;
+}

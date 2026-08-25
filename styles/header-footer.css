@@ -1,206 +1,175 @@
-/* ========================================
-   HEADER
-======================================== */
-
 header {
-    position: relative;
+  position: relative;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    height: 128px;
+  height: 128px;
 
-    background-color: var(--color-orange);
+  background-color: var(--color-orange);
 }
 
 .img_logo {
-    width: 92.56px;
-    height: 38px;
+  width: 92.56px;
+  height: 38px;
 
-    margin-left: 5em;
+  margin-left: 5em;
 
-    object-fit: contain;
+  object-fit: contain;
 }
-
-
-.header img {
-    display: block;
-
-    width: 100%;
-}
-
-
-/* ========================================
-   HAMBURGER MENU
-======================================== */
 
 .hamburger-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    width: 60px;
-    height: 60px;
-    padding: 12px 8px;
+  width: 60px;
+  height: 60px;
 
-    background-color: var(--color-orange);
-    border: none;
+  padding: 0;
 
-    cursor: pointer;
+  background-color: var(--color-orange);
+  border: none;
+
+  cursor: pointer;
 }
 
 .hamburger-btn img {
-    display: block;
+  display: block;
 
-    width: 60px;
-    height: 60px;
+  width: 60px;
+  height: 60px;
 
-    margin-right: 15em;
+  margin-right: 15em;
 }
 
-
-/* ========================================
-   HERO
-======================================== */
-
 .hero {
-    width: 100%;
-    height: 320px;
+  width: 100%;
+  height: 320px;
 
-    margin: 0 auto;
+  margin: 0 auto;
 
-    overflow: hidden;
+  overflow: hidden;
 
-    background-color: #d9d9d9;
-    border-radius: 0 0 10px 10px;
+  background-color: #d9d9d9;
+  border-radius: 0 0 10px 10px;
 }
 
 .hero_img {
-    display: block;
+  display: block;
 
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    object-fit: cover;
+  object-fit: cover;
 }
 
-
-/* ========================================
-   CATEGORY NAVIGATION
-======================================== */
-
 .category-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    gap: 40px;
+  width: 100%;
+  height: 60px;
 
-    width: 100%;
-    height: 60px;
+  gap: 40px;
 
-    background-color: var(--color-white);
-
-    border-bottom: 1px solid var(--border);
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-basket-background);
 }
 
 .category-nav a {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    gap: 8px;
+  gap: 8px;
 
-    color: var(--color-orange);
+  color: var(--color-orange);
 
-    font-family: var(--font-subtitle);
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 120%;
-    letter-spacing: 0;
+  font-family: var(--font-subtitle);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: 0;
 
-    text-decoration: none;
+  text-decoration: none;
 
-    transition: var(--transition);
+  transition: var(--transition);
 }
 
 .category-nav a:hover {
-    color: var(--primary-dark);
+  color: var(--color-orange-hover);
 }
 
-
-/* ========================================
-   FOOTER
-======================================== */
-
 .footer {
-    padding: 40px 60px 20px;
+  padding: 40px 60px 20px;
 
-    background-color: var(--color-orange);
-    color: var(--color-white);
+  background-color: var(--color-orange);
+  color: var(--color-white);
 }
 
 .footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 
-    gap: 40px;
+  gap: 40px;
 }
 
 .footer-container > div {
-    flex: 1;
-    min-width: 220px;
+  flex: 1;
+  min-width: 220px;
 }
 
 .footer img {
-    width: 170px;
+  width: 170px;
 
-    margin-bottom: 16px;
+  margin-bottom: 16px;
 }
 
 .footer h3 {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .footer p {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 
-    line-height: 1.5;
+  line-height: 1.5;
 }
 
 .footer a {
-    display: block;
+  display: block;
 
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 
-    color: var(--color-white);
+  color: var(--color-white);
 
-    text-decoration: none;
+  text-decoration: none;
 
-    transition: 0.3s;
+  transition: var(--transition);
 }
 
 .footer a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .phone {
-    margin: 15px 0;
+  margin: 15px 0;
 
-    font-size: 24px;
-    font-weight: 700;
+  font-size: 24px;
+  font-weight: 700;
 }
 
 .footer-bottom {
-    margin-top: 35px;
-    padding-top: 20px;
+  margin-top: 35px;
+  padding-top: 20px;
 
-    border-top: 1px solid rgba(255, 255, 255, 0.4);
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
 
-    text-align: center;
+  text-align: center;
 
-    font-size: 14px;
+  font-size: 14px;
 }

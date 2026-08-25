@@ -1,290 +1,272 @@
-// =======================================
-// Global Variables
-// =======================================
 
 let basket = [];
 const deliveryCosts = 5;
 
-// =======================================
-// Initialization
-// =======================================
 
 function init() {
+  loadBasket();
+  renderMenu();
+  renderBasket();
+  updateBasketCount();
+}
+
+function loadBasket() {
   let savedBasket = localStorage.getItem("basket");
 
   if (savedBasket) {
     basket = JSON.parse(savedBasket);
   }
+}
 
+function renderMenu() {
   renderBurger();
   renderPizza();
   renderSalat();
   renderGetraenke();
   renderDessert();
-  renderBasket();
-  updateBasketCount();
 }
 
-// =======================================
-// Render Menu Categories
-// =======================================
+
 
 function renderBurger() {
-  let html = "";
-  let contentRef = document.getElementById("burger_content");
-
-  for (let index = 0; index < menu.burger.length; index++) {
-    let dish = menu.burger[index];
-
-    html += getDishTemplate(dish);
-  }
-
-  contentRef.innerHTML = html;
+  renderCategory(menu.burger, "burger_content");
 }
 
 function renderPizza() {
-  let html = "";
-  let contentRef = document.getElementById("pizza_content");
-
-  for (let index = 0; index < menu.pizza.length; index++) {
-    let dish = menu.pizza[index];
-    html += getDishTemplate(dish);
-  }
-
-  contentRef.innerHTML = html;
+  renderCategory(menu.pizza, "pizza_content");
 }
 
 function renderSalat() {
-  let html = "";
-  let contentRef = document.getElementById("salat_content");
-
-  for (let index = 0; index < menu.salat.length; index++) {
-    let dish = menu.salat[index];
-    html += getDishTemplate(dish);
-  }
-
-  contentRef.innerHTML = html;
+  renderCategory(menu.salat, "salat_content");
 }
 
 function renderGetraenke() {
-  let html = "";
-  let contentRef = document.getElementById("getraenke_content");
-
-  for (let index = 0; index < menu.getraenke.length; index++) {
-    let dish = menu.getraenke[index];
-    html += getDishTemplate(dish);
-  }
-
-  contentRef.innerHTML = html;
+  renderCategory(menu.getraenke, "getraenke_content");
 }
 
 function renderDessert() {
-  let html = "";
-  let contentRef = document.getElementById("dessert_content");
+  renderCategory(menu.dessert, "dessert_content");
+}
 
-  for (let index = 0; index < menu.dessert.length; index++) {
-    let dish = menu.dessert[index];
-    html += getDishTemplate(dish);
+function renderCategory(category, contentId) {
+  let html = "";
+  let contentRef = document.getElementById(contentId);
+
+  for (let index = 0; index < category.length; index++) {
+    html += getDishTemplate(category[index]);
   }
 
   contentRef.innerHTML = html;
 }
 
-// =======================================
-// Basket Logic
-// =======================================
+
 
 function getDishById(id) {
-  let categories = [
+  let categories = getMenuCategories();
+
+  for (let index = 0; index < categories.length; index++) {
+    let dish = findDishInCategory(categories[index], id);
+
+    if (dish) {
+      return dish;
+    }
+  }
+}
+
+function getMenuCategories() {
+  return [
     menu.burger,
     menu.pizza,
     menu.salat,
     menu.getraenke,
     menu.dessert,
   ];
+}
 
-  for (
-    let categoryIndex = 0;
-    categoryIndex < categories.length;
-    categoryIndex++
-  ) {
-    let currentCategory = categories[categoryIndex];
-
-    for (let dishIndex = 0; dishIndex < currentCategory.length; dishIndex++) {
-      let dish = currentCategory[dishIndex];
-
-      if (dish.id === id) {
-        return dish;
-      }
+function findDishInCategory(category, id) {
+  for (let index = 0; index < category.length; index++) {
+    if (category[index].id === id) {
+      return category[index];
     }
   }
 }
 
 function addToBasket(id) {
-  // Get selected dish
   let dish = getDishById(id);
 
   if (!dish) {
     return;
   }
 
-  let found = false;
+  let basketItem = basket.find((item) => item.id === dish.id);
 
-  // Check if dish already exists in basket
-  for (let index = 0; index < basket.length; index++) {
-    let currentBasketItem = basket[index];
-
-    if (currentBasketItem.id === dish.id) {
-      currentBasketItem.quantity++;
-      found = true;
-      break;
-    }
+  if (basketItem) {
+    basketItem.quantity++;
+  } else {
+    addNewBasketItem(dish);
   }
 
-  // Add new item if it does not exist yet
-  if (!found) {
-    let basketItem = {
-      id: dish.id,
-      name: dish.name,
-      price: dish.price,
-      description: dish.description,
-      quantity: 1,
-    };
+  saveAndRenderBasket();
+  updateAddButton(id);
+}
 
-    basket.push(basketItem);
-  }
+function addNewBasketItem(dish) {
+  let basketItem = {
+    id: dish.id,
+    name: dish.name,
+    price: dish.price,
+    description: dish.description,
+    quantity: 1,
+  };
 
-  localStorage.setItem("basket", JSON.stringify(basket))
-
-  renderBasket();
-  updateBasketCount();
-
-  // Change button text
-  let button = document.querySelector(`#add-button-${id}`);
-  let basketItem = basket.find((item) => item.id === id);
-
-  if (button && basketItem) {
-    button.textContent = `Added ${basketItem.quantity}`;
-  }
+  basket.push(basketItem);
 }
 
 function removeFromBasket(id) {
-  // Reduce quantity or remove item completely
-  for (let index = 0; index < basket.length; index++) {
-    let currentBasketItem = basket[index];
+  let basketItem = basket.find((item) => item.id === id);
 
-    if (currentBasketItem.id === id) {
-      if (currentBasketItem.quantity === 1) {
-        basket.splice(index, 1);
-      } else {
-        currentBasketItem.quantity--;
-      }
-
-      break;
-    }
+  if (!basketItem) {
+    return;
   }
 
-  localStorage.setItem("basket", JSON.stringify(basket));
+  if (basketItem.quantity === 1) {
+    removeBasketItem(id);
+  } else {
+    basketItem.quantity--;
+  }
 
+  saveAndRenderBasket();
+  updateAddButton(id);
+}
+
+function removeBasketItem(id) {
+  let index = basket.findIndex((item) => item.id === id);
+
+  basket.splice(index, 1);
+}
+
+function saveBasket() {
+  localStorage.setItem("basket", JSON.stringify(basket));
+}
+
+function saveAndRenderBasket() {
+  saveBasket();
   renderBasket();
   updateBasketCount();
+}
 
-  // Update Add to basket button
+function updateAddButton(id) {
   let button = document.querySelector(`#add-button-${id}`);
   let basketItem = basket.find((item) => item.id === id);
 
-  if (button) {
-    if (basketItem) {
-      button.textContent = `Added ${basketItem.quantity}`;
-    } else {
-      button.textContent = "Add to basket";
-    }
+  if (!button) {
+    return;
+  }
+
+  if (basketItem) {
+    button.textContent = `Added ${basketItem.quantity}`;
+  } else {
+    button.textContent = "Add to basket";
   }
 }
 
-// =======================================
-// Basket Rendering
-// =======================================
 
 function renderBasket() {
-  let html = `
+  let html = getBasketTitleTemplate();
+  html += getBasketContent();
+
+  renderBasketContent(html);
+  renderBasketDialog(html);
+}
+
+function getBasketTitleTemplate() {
+  return `
     <h4 class="basket_title">🛒 Your Basket</h4>
   `;
+}
 
-  let contentRef = document.getElementById("basket");
+function getBasketContent() {
+  if (basket.length === 0) {
+    return getEmptyBasketTemplate();
+  }
+
+  return getFilledBasketTemplate();
+}
+
+function getFilledBasketTemplate() {
+  let totalPrice = getTotalPrice();
+  let html = getBasketItemsTemplate();
+  html += getBasketTotalTemplate(totalPrice);
+
+  return html;
+}
+
+function getBasketItemsTemplate() {
+  let html = `<div class="basket_items_container">`;
+
+  for (let index = 0; index < basket.length; index++) {
+    html += getBasketTemplate(basket[index]);
+  }
+
+  html += `</div>`;
+
+  return html;
+}
+
+function getTotalPrice() {
   let totalPrice = 0;
 
-  // Render empty basket message
-  if (basket.length === 0) {
-    html += `
-      <div class="empty_basket">
-        <p>Nothing here yet.</p>
-        <p>Go ahead and choose something delicious!</p>
-        <span class="empty_basket_icon">🛒</span>
-      </div>
-    `;
+  for (let index = 0; index < basket.length; index++) {
+    totalPrice += basket[index].price * basket[index].quantity;
   }
 
-  // Render basket items
-  if (basket.length > 0) {
-    html += `
-      <div class="basket_items_container">
-    `;
+  return totalPrice;
+}
 
-    for (let index = 0; index < basket.length; index++) {
-      let basketItem = basket[index];
-
-      totalPrice += basketItem.price * basketItem.quantity;
-
-      html += getBasketTemplate(basketItem);
-    }
-
-    html += `
-      </div>
-    `;
+function getDeliveryCosts(totalPrice) {
+  if (totalPrice >= 50) {
+    return 0;
   }
 
-  // Show total only when basket is not empty
-  if (basket.length > 0) {
-    let currentDeliveryCosts = deliveryCosts;
+  return deliveryCosts;
+}
 
-    // Free delivery from 50 €
-    if (totalPrice >= 50) {
-      currentDeliveryCosts = 0;
-    }
+function getBasketTotalTemplate(totalPrice) {
+  let currentDeliveryCosts = getDeliveryCosts(totalPrice);
+  let finalPrice = totalPrice + currentDeliveryCosts;
 
-    let finalPrice = totalPrice + currentDeliveryCosts;
+  return `
+    <div class="basket_total">
+      <div class="total_delivery_price">
+        <p>
+          <span>Subtotal</span>
+          <span>${totalPrice.toFixed(2)} €</span>
+        </p>
 
-    html += `
-      <div class="basket_total">
-
-        <div class="total_delivery_price">
-  <p>
-    <span>Subtotal</span>
-    <span>${totalPrice.toFixed(2)} €</span>
-  </p>
-
-  <p>
-    <span>Delivery fee</span>
-    <span>${currentDeliveryCosts.toFixed(2)} €</span>
-  </p>
-</div>
-
-        <div class="total_price_basket">
-  <span>Total</span>
-  <span>${finalPrice.toFixed(2)} €</span>
-</div>
-
-        <button onclick="order()" class="order_button">
-  Buy now (${finalPrice.toFixed(2)} €)
-</button>
-
+        <p>
+          <span>Delivery fee</span>
+          <span>${currentDeliveryCosts.toFixed(2)} €</span>
+        </p>
       </div>
-    `;
-  }
 
+      <div class="total_price_basket">
+        <span>Total</span>
+        <span>${finalPrice.toFixed(2)} €</span>
+      </div>
+
+      <button onclick="order()" class="order_button">
+        Buy now (${finalPrice.toFixed(2)} €)
+      </button>
+    </div>
+  `;
+}
+
+function renderBasketContent(html) {
+  let contentRef = document.getElementById("basket");
   contentRef.innerHTML = html;
+}
 
+function renderBasketDialog(html) {
   let dialogContentRef = document.getElementById("basket_dialog_content");
 
   if (dialogContentRef) {
@@ -292,23 +274,32 @@ function renderBasket() {
   }
 }
 
+
 function getRemoveButton(basketItem) {
   if (basketItem.quantity === 1) {
-    return `
-      <button
-        class="basket_btn"
-        onclick="removeFromBasket(${basketItem.id})"
-        aria-label="Remove item from basket"
-      >
-        🗑️
-      </button>
-    `;
+    return getDeleteButtonTemplate(basketItem.id);
   }
 
+  return getDecreaseButtonTemplate(basketItem.id);
+}
+
+function getDeleteButtonTemplate(id) {
   return `
     <button
       class="basket_btn"
-      onclick="removeFromBasket(${basketItem.id})"
+      onclick="removeFromBasket(${id})"
+      aria-label="Remove item from basket"
+    >
+      🗑️
+    </button>
+  `;
+}
+
+function getDecreaseButtonTemplate(id) {
+  return `
+    <button
+      class="basket_btn"
+      onclick="removeFromBasket(${id})"
       aria-label="Decrease quantity"
     >
       ➖
@@ -316,36 +307,18 @@ function getRemoveButton(basketItem) {
   `;
 }
 
-// =======================================
-// Order
-// =======================================
 
 function order() {
-
   document.getElementById("order_dialog").showModal();
-  
+}
+
+function closeOrderDialog() {
+  document.getElementById("order_dialog").close();
 }
 
 // =======================================
-// Back to Top Button
+// Basket Dialog
 // =======================================
-
-const toTopButton = document.querySelector(".to-top");
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 500) {
-    toTopButton.style.display = "block";
-  } else {
-    toTopButton.style.display = "none";
-  }
-});
-
-toTopButton.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
-});
 
 function openBasketDialog() {
   document.getElementById("basket_dialog").showModal();
@@ -355,40 +328,47 @@ function closeBasketDialog() {
   document.getElementById("basket_dialog").close();
 }
 
-const homeButton = document.getElementById("home_button");
 
-homeButton.addEventListener("click", () => {
+function updateBasketCount() {
+  let basketCount = 0;
+
+  for (let index = 0; index < basket.length; index++) {
+    basketCount += basket[index].quantity;
+  }
+
+  document.getElementById("basket_count").textContent = basketCount;
+}
+
+
+
+const toTopButton = document.querySelector(".to-top");
+
+window.addEventListener("scroll", () => {
+  toggleToTopButton();
+});
+
+function toggleToTopButton() {
+  if (window.scrollY > 500) {
+    toTopButton.style.display = "block";
+  } else {
+    toTopButton.style.display = "none";
+  }
+}
+
+toTopButton.addEventListener("click", () => {
+  scrollToTop();
+});
+
+function scrollToTop() {
   window.scrollTo({
     top: 0,
     behavior: "smooth",
   });
+}
+
+
+const homeButton = document.getElementById("home_button");
+
+homeButton.addEventListener("click", () => {
+  scrollToTop();
 });
-
-function updateBasketCount() {
-  let basketCount = 0;
-  let basketCountRef = document.getElementById("basket_count");
-
-  for (let index = 0; index < basket.length; index++) {
-    let basketItem = basket[index];
-    basketCount = basketCount + basketItem.quantity;
-  }
-
-  basketCountRef.textContent = basketCount;
-
-
-  
-}
-
-
-
-
-function openOrderDialog() {
-  document.getElementById("order_dialog").showModal();
-}
-
-function closeOrderDialog() {
-  document.getElementById("order_dialog").close();
-}
-
-
-
