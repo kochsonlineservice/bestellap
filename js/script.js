@@ -5,7 +5,6 @@
 let basket = [];
 const deliveryCosts = 5;
 
-
 // =======================================
 // Initialization
 // =======================================
@@ -19,7 +18,6 @@ function init() {
   renderBasket();
 }
 
-
 // =======================================
 // Render Menu Categories
 // =======================================
@@ -30,12 +28,12 @@ function renderBurger() {
 
   for (let index = 0; index < menu.burger.length; index++) {
     let dish = menu.burger[index];
+
     html += getDishTemplate(dish);
   }
 
   contentRef.innerHTML = html;
 }
-
 
 function renderPizza() {
   let html = "";
@@ -49,7 +47,6 @@ function renderPizza() {
   contentRef.innerHTML = html;
 }
 
-
 function renderSalat() {
   let html = "";
   let contentRef = document.getElementById("salat_content");
@@ -61,7 +58,6 @@ function renderSalat() {
 
   contentRef.innerHTML = html;
 }
-
 
 function renderGetraenke() {
   let html = "";
@@ -75,7 +71,6 @@ function renderGetraenke() {
   contentRef.innerHTML = html;
 }
 
-
 function renderDessert() {
   let html = "";
   let contentRef = document.getElementById("dessert_content");
@@ -87,7 +82,6 @@ function renderDessert() {
 
   contentRef.innerHTML = html;
 }
-
 
 // =======================================
 // Basket Logic
@@ -102,7 +96,11 @@ function getDishById(id) {
     menu.dessert,
   ];
 
-  for (let categoryIndex = 0; categoryIndex < categories.length; categoryIndex++) {
+  for (
+    let categoryIndex = 0;
+    categoryIndex < categories.length;
+    categoryIndex++
+  ) {
     let currentCategory = categories[categoryIndex];
 
     for (let dishIndex = 0; dishIndex < currentCategory.length; dishIndex++) {
@@ -114,7 +112,6 @@ function getDishById(id) {
     }
   }
 }
-
 
 function addToBasket(id) {
   // Get selected dish
@@ -151,6 +148,7 @@ function addToBasket(id) {
   }
 
   renderBasket();
+  updateBasketCount();
 
   // Change button text
   let button = document.querySelector(`#add-button-${id}`);
@@ -160,7 +158,6 @@ function addToBasket(id) {
     button.textContent = `Added ${basketItem.quantity}`;
   }
 }
-
 
 function removeFromBasket(id) {
   // Reduce quantity or remove item completely
@@ -179,6 +176,7 @@ function removeFromBasket(id) {
   }
 
   renderBasket();
+  updateBasketCount();
 
   // Update Add to basket button
   let button = document.querySelector(`#add-button-${id}`);
@@ -192,7 +190,6 @@ function removeFromBasket(id) {
     }
   }
 }
-
 
 // =======================================
 // Basket Rendering
@@ -217,7 +214,6 @@ function renderBasket() {
     `;
   }
 
-
   // Render basket items
   if (basket.length > 0) {
     html += `
@@ -236,7 +232,6 @@ function renderBasket() {
       </div>
     `;
   }
-
 
   // Show total only when basket is not empty
   if (basket.length > 0) {
@@ -279,13 +274,12 @@ function renderBasket() {
 
   contentRef.innerHTML = html;
 
-let dialogContentRef = document.getElementById("basket_dialog_content");
+  let dialogContentRef = document.getElementById("basket_dialog_content");
 
-if (dialogContentRef) {
-  dialogContentRef.innerHTML = html;
+  if (dialogContentRef) {
+    dialogContentRef.innerHTML = html;
+  }
 }
-}
-
 
 function getRemoveButton(basketItem) {
   if (basketItem.quantity === 1) {
@@ -311,7 +305,6 @@ function getRemoveButton(basketItem) {
   `;
 }
 
-
 // =======================================
 // Order
 // =======================================
@@ -323,7 +316,6 @@ function order() {
 
   alert("Vielen Dank! Ihre Bestellung ist unterwegs. 🍕");
 }
-
 
 // =======================================
 // Back to Top Button
@@ -339,7 +331,6 @@ window.addEventListener("scroll", () => {
   }
 });
 
-
 toTopButton.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
@@ -347,16 +338,13 @@ toTopButton.addEventListener("click", () => {
   });
 });
 
-
-
 function openBasketDialog() {
-    document.getElementById("basket_dialog").showModal();
+  document.getElementById("basket_dialog").showModal();
 }
 
 function closeBasketDialog() {
-    document.getElementById("basket_dialog").close();
+  document.getElementById("basket_dialog").close();
 }
-
 
 const homeButton = document.getElementById("home_button");
 
@@ -366,3 +354,18 @@ homeButton.addEventListener("click", () => {
     behavior: "smooth",
   });
 });
+
+function updateBasketCount() {
+  let basketCount = 0;
+  let basketCountRef = document.getElementById("basket_count");
+
+  for (let index = 0; index < basket.length; index++) {
+    let basketItem = basket[index];
+    basketCount = basketCount + basketItem.quantity;
+  }
+
+  basketCountRef.textContent = basketCount;
+
+
+  
+}

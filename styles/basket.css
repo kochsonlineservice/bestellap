@@ -113,6 +113,9 @@
 /* ========================================
    BASKET BUTTONS
 ======================================== */
+.mobile_nav_button{
+    position: relative;
+}
 
 .basket_btn {
     border: none;
