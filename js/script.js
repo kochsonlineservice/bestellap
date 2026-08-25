@@ -10,12 +10,19 @@ const deliveryCosts = 5;
 // =======================================
 
 function init() {
+  let savedBasket = localStorage.getItem("basket");
+
+  if (savedBasket) {
+    basket = JSON.parse(savedBasket);
+  }
+
   renderBurger();
   renderPizza();
   renderSalat();
   renderGetraenke();
   renderDessert();
   renderBasket();
+  updateBasketCount();
 }
 
 // =======================================
@@ -147,6 +154,8 @@ function addToBasket(id) {
     basket.push(basketItem);
   }
 
+  localStorage.setItem("basket", JSON.stringify(basket))
+
   renderBasket();
   updateBasketCount();
 
@@ -174,6 +183,8 @@ function removeFromBasket(id) {
       break;
     }
   }
+
+  localStorage.setItem("basket", JSON.stringify(basket));
 
   renderBasket();
   updateBasketCount();
@@ -310,11 +321,9 @@ function getRemoveButton(basketItem) {
 // =======================================
 
 function order() {
-  basket = [];
 
-  renderBasket();
-
-  alert("Vielen Dank! Ihre Bestellung ist unterwegs. 🍕");
+  document.getElementById("order_dialog").showModal();
+  
 }
 
 // =======================================
@@ -369,3 +378,17 @@ function updateBasketCount() {
 
   
 }
+
+
+
+
+function openOrderDialog() {
+  document.getElementById("order_dialog").showModal();
+}
+
+function closeOrderDialog() {
+  document.getElementById("order_dialog").close();
+}
+
+
+

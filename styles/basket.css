@@ -251,3 +251,118 @@
     transform: scale(1.03);
 }
 
+
+
+/* ========================================
+   ORDER DIALOG
+======================================== */
+
+
+
+.order_dialog {
+
+     position: fixed;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+    width: calc(100% - 48px);
+    max-width: 500px;
+
+    padding: 0;
+
+    background-color: var(--color-dark);
+    border: none;
+    border-radius: 20px;
+}
+
+.order_dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.order_dialog_content {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 48px 32px 32px;
+
+    text-align: center;
+}
+
+.order_dialog_close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 36px;
+    height: 36px;
+
+    background-color: var(--color-orange);
+    border: none;
+    border-radius: 50%;
+
+    color: var(--color-white);
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+.order_dialog_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 70px;
+    height: 70px;
+
+    margin-bottom: 20px;
+
+    background-color: var(--color-orange);
+    border-radius: 50%;
+
+    color: var(--color-dark);
+    font-size: 40px;
+}
+
+.order_dialog_content h2 {
+    margin: 0 0 16px;
+
+    color: var(--color-white);
+}
+
+.order_dialog_content p {
+    max-width: 350px;
+    margin: 0 0 24px;
+
+    color: var(--color-white);
+    line-height: 1.5;
+}
+
+.order_dialog_delivery {
+    margin-bottom: 24px;
+
+    color: var(--color-orange);
+    font-size: 48px;
+}
+
+.order_dialog_button {
+    width: 100%;
+    padding: 14px;
+
+    background-color: var(--color-orange);
+    border: none;
+    border-radius: 10px;
+
+    color: var(--color-white);
+    font-size: 18px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
