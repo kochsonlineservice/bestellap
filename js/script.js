@@ -17,36 +17,13 @@ function loadBasket() {
     basket = JSON.parse(savedBasket);
   }
 }
-
 function renderMenu() {
-  renderBurger();
-  renderPizza();
-  renderSalat();
-  renderGetraenke();
-  renderDessert();
+  for (let category in menu) {
+    renderCategory(menu[category], `${category}_content`);
+  }
 }
 
 
-
-function renderBurger() {
-  renderCategory(menu.burger, "burger_content");
-}
-
-function renderPizza() {
-  renderCategory(menu.pizza, "pizza_content");
-}
-
-function renderSalat() {
-  renderCategory(menu.salat, "salat_content");
-}
-
-function renderGetraenke() {
-  renderCategory(menu.getraenke, "getraenke_content");
-}
-
-function renderDessert() {
-  renderCategory(menu.dessert, "dessert_content");
-}
 
 function renderCategory(category, contentId) {
   let html = "";
@@ -146,14 +123,7 @@ function deleteFromBasket(id) {
   updateAddButton(id);
 }
 
-function deleteFromBasket(id) {
-  basket = basket.filter((basketItem) => basketItem.id !== id);
 
-  localStorage.setItem("basket", JSON.stringify(basket));
-
-  renderBasket();
-  updateBasketCount();
-}
 
 function removeBasketItem(id) {
   let index = basket.findIndex((item) => item.id === id);
@@ -195,11 +165,6 @@ function renderBasket() {
   renderBasketDialog(html);
 }
 
-function getBasketTitleTemplate() {
-  return `
-    <h4 class="basket_title">🛒 Your Basket</h4>
-  `;
-}
 
 function getBasketContent() {
   if (basket.length === 0) {
@@ -291,41 +256,8 @@ function renderBasketDialog(html) {
 }
 
 
-function getRemoveButton(basketItem) {
-  return `
-    <button
-      class="basket_btn"
-      onclick="removeFromBasket(${basketItem.id})"
-      aria-label="Decrease quantity"
-    >
-      ➖
-    </button>
-  `;
-}
 
-function getDeleteButtonTemplate(id) {
-  return `
-    <button
-      class="basket_btn"
-      onclick="removeFromBasket(${id})"
-      aria-label="Remove item from basket"
-    >
-      🗑️
-    </button>
-  `;
-}
 
-function getDecreaseButtonTemplate(id) {
-  return `
-    <button
-      class="basket_btn"
-      onclick="removeFromBasket(${id})"
-      aria-label="Decrease quantity"
-    >
-      ➖
-    </button>
-  `;
-}
 
 function order() {
   basket = [];

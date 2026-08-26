@@ -73,17 +73,6 @@ function getEmptyBasketTemplate() {
   `;
 }
 
-function getDeleteButtonTemplate(id) {
-  return `
-    <button
-      class="basket_btn"
-      onclick="deleteFromBasket(${id})"
-      aria-label="Remove item from basket"
-    >
-      🗑️
-    </button>
-  `;
-}
 
 function getDecreaseButtonTemplate(id) {
   return `
@@ -105,3 +94,68 @@ function deleteFromBasket(id) {
   renderBasket();
   updateBasketCount();
 }
+
+
+function getBasketTitleTemplate() {
+  return `
+    <h4 class="basket_title">🛒 Your Basket</h4>
+  `;
+}
+
+function getBasketTotalTemplate(totalPrice) {
+  let currentDeliveryCosts = getDeliveryCosts(totalPrice);
+  let finalPrice = totalPrice + currentDeliveryCosts;
+
+  return `
+    <div class="basket_total">
+      <div class="total_delivery_price">
+        <p>
+          <span>Subtotal</span>
+          <span>${totalPrice.toFixed(2)} €</span>
+        </p>
+
+        <p>
+          <span>Delivery fee</span>
+          <span>${currentDeliveryCosts.toFixed(2)} €</span>
+        </p>
+      </div>
+
+      <div class="total_price_basket">
+        <span>Total</span>
+        <span>${finalPrice.toFixed(2)} €</span>
+      </div>
+
+      <button onclick="order()" class="order_button">
+        Buy now (${finalPrice.toFixed(2)} €)
+      </button>
+    </div>
+  `;
+}
+
+
+function getRemoveButton(basketItem) {
+  return `
+    <button
+      class="basket_btn"
+      onclick="removeFromBasket(${basketItem.id})"
+      aria-label="Decrease quantity"
+    >
+      ➖
+    </button>
+  `;
+}
+
+
+function getDeleteButtonTemplate(id) {
+  return `
+    <button
+      class="basket_btn"
+      onclick="deleteFromBasket(${id})"
+      aria-label="Remove item from basket"
+    >
+      🗑️
+    </button>
+  `;
+}
+
+
