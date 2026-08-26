@@ -6,8 +6,9 @@
   min-width: 280px;
   width: 435px;
   height: 794px;
-
   padding-bottom: 16px;
+
+  overflow: hidden;
 
   background-color: var(--color-dark);
   border-radius: 20px;
@@ -107,6 +108,11 @@
   transition: var(--transition);
 }
 
+.basket_items_container {
+  height: 350px;
+  overflow-y: auto;
+}
+
 .basket_btn:hover {
   transform: scale(1.15);
 }
@@ -129,10 +135,15 @@
   font-size: 80px;
 }
 
-.basket_items_container {
-  height: 350px;
+#basket {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
 
-  overflow-y: auto;
+.basket_total {
+  flex-shrink: 0;
 }
 
 .total_delivery_price {

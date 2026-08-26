@@ -42,16 +42,18 @@ function getBasketTemplate(basketItem) {
       </p>
 
       <div class="basket_item_footer">
-        <div class="basket_quantity_controls">
-          ${getRemoveButton(basketItem)}
+       <div class="basket_quantity_controls">
+  ${getRemoveButton(basketItem)}
 
-          <button
-            class="basket_btn"
-            onclick="addToBasket(${basketItem.id})"
-          >
-            ➕
-          </button>
-        </div>
+  ${getDeleteButtonTemplate(basketItem.id)}
+
+  <button
+    class="basket_btn"
+    onclick="addToBasket(${basketItem.id})"
+  >
+    ➕
+  </button>
+</div>
 
         <p class="basket_item_price">
           ${(basketItem.price * basketItem.quantity).toFixed(2)} €
@@ -75,7 +77,7 @@ function getDeleteButtonTemplate(id) {
   return `
     <button
       class="basket_btn"
-      onclick="removeFromBasket(${id})"
+      onclick="deleteFromBasket(${id})"
       aria-label="Remove item from basket"
     >
       🗑️
@@ -93,4 +95,13 @@ function getDecreaseButtonTemplate(id) {
       ➖
     </button>
   `;
+}
+
+function deleteFromBasket(id) {
+  basket = basket.filter((basketItem) => basketItem.id !== id);
+
+  localStorage.setItem("basket", JSON.stringify(basket));
+
+  renderBasket();
+  updateBasketCount();
 }

@@ -10,6 +10,18 @@ header {
   background-color: var(--color-orange);
 }
 
+.header_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  max-width: var(--max-width);
+
+  height: 100%;
+  margin: 0 auto;
+}
+
 .img_logo {
   width: 92.56px;
   height: 38px;
@@ -113,6 +125,12 @@ header {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+
+  width: 100%;
+  max-width: var(--max-width);
+
+  margin: 0 auto;
+  padding: 0 60px;
 
   gap: 40px;
 }

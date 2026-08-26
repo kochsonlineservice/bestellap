@@ -31,15 +31,17 @@
   <body onload="init()">
     <!-- Header -->
     <header>
-      <img
-        class="img_logo"
-        src="./assets/img/logo-bestell-app.png"
-        alt="Bestell App Logo"
-      />
+      <div class="header_content">
+        <img
+          class="img_logo"
+          src="./assets/img/logo-bestell-app.png"
+          alt="Bestell App Logo"
+        />
 
-      <button class="hamburger-btn" aria-label="Open shopping cart">
-        <img src="./assets/icons/hamburger_btn.png" alt="" />
-      </button>
+        <button class="hamburger-btn" aria-label="Open shopping cart">
+          <img src="./assets/icons/hamburger_btn.png" alt="" />
+        </button>
+      </div>
     </header>
 
     <!-- Desktop Navigation -->
@@ -72,9 +74,7 @@
           <span>House</span>
         </h1>
 
-        <div class="restaurant_rating">
-          ⭐ 4,1 <span>(317)</span>
-        </div>
+        <div class="restaurant_rating">⭐ 4,1 <span>(317)</span></div>
       </div>
 
       <p class="restaurant-info-subtitle">
@@ -84,96 +84,99 @@
 
     <!-- Main Content -->
     <main>
-      <!-- Menu -->
-      <section class="menu_content">
+  <div class="main_content">
 
-        <!-- Burger -->
-        <div class="category_bar" id="burger">
-          <div class="content_wrapper">
-            <img
-              class="category_icon"
-              src="./assets/icons/burger.svg"
-              alt="Burger"
-            />
+    <!-- Menu -->
+    <section class="menu_content">
+      <!-- Burger -->
+      <div class="category_bar" id="burger">
+        <div class="content_wrapper">
+          <img
+            class="category_icon"
+            src="./assets/icons/burger.svg"
+            alt="Burger"
+          />
 
-            <h2>Burger & Sandwiches</h2>
-          </div>
+          <h2>Burger & Sandwiches</h2>
         </div>
-
-        <div class="content_wrapper" id="burger_content"></div>
-
-        <button class="to-top" aria-label="Nach oben">↑</button>
-
-        <!-- Pizza -->
-        <div class="category_bar" id="pizza">
-          <div class="content_wrapper">
-            <img
-              class="category_icon"
-              src="./assets/icons/pizza.svg"
-              alt="Pizza"
-            />
-
-            <h2>Pizza</h2>
-          </div>
-        </div>
-
-        <div class="content_wrapper" id="pizza_content"></div>
-
-        <!-- Salat -->
-        <div class="category_bar" id="salat">
-          <div class="content_wrapper">
-            <img
-              class="category_icon"
-              src="./assets/icons/salad.svg"
-              alt="Salat"
-            />
-
-            <h2>Salat</h2>
-          </div>
-        </div>
-
-        <div class="content_wrapper" id="salat_content"></div>
-
-        <!-- Getränke -->
-        <div class="category_bar" id="getraenke">
-          <div class="content_wrapper">
-            <img
-              class="category_icon"
-              src="./assets/icons/drinks.svg"
-              alt="Getränke"
-            />
-
-            <h2>Getränke</h2>
-          </div>
-        </div>
-
-        <div class="content_wrapper" id="getraenke_content"></div>
-
-        <!-- Dessert -->
-        <div class="category_bar" id="dessert">
-          <div class="content_wrapper">
-            <img
-              class="category_icon"
-              src="./assets/icons/dessert.png"
-              alt="Dessert"
-            />
-
-            <h2>Desserts</h2>
-          </div>
-        </div>
-
-        <div class="content_wrapper" id="dessert_content"></div>
-      </section>
-
-      <!-- Shopping Cart -->
-      <div class="basket_top">
-        <aside
-          class="basket_section"
-          id="basket"
-          aria-label="Shopping cart"
-        ></aside>
       </div>
-    </main>
+
+      <div class="content_wrapper" id="burger_content"></div>
+
+      <button class="to-top" aria-label="Nach oben">↑</button>
+
+      <!-- Pizza -->
+      <div class="category_bar" id="pizza">
+        <div class="content_wrapper">
+          <img
+            class="category_icon"
+            src="./assets/icons/pizza.svg"
+            alt="Pizza"
+          />
+
+          <h2>Pizza</h2>
+        </div>
+      </div>
+
+      <div class="content_wrapper" id="pizza_content"></div>
+
+      <!-- Salat -->
+      <div class="category_bar" id="salat">
+        <div class="content_wrapper">
+          <img
+            class="category_icon"
+            src="./assets/icons/salad.svg"
+            alt="Salat"
+          />
+
+          <h2>Salat</h2>
+        </div>
+      </div>
+
+      <div class="content_wrapper" id="salat_content"></div>
+
+      <!-- Getränke -->
+      <div class="category_bar" id="getraenke">
+        <div class="content_wrapper">
+          <img
+            class="category_icon"
+            src="./assets/icons/drinks.svg"
+            alt="Getränke"
+          />
+
+          <h2>Getränke</h2>
+        </div>
+      </div>
+
+      <div class="content_wrapper" id="getraenke_content"></div>
+
+      <!-- Dessert -->
+      <div class="category_bar" id="dessert">
+        <div class="content_wrapper">
+          <img
+            class="category_icon"
+            src="./assets/icons/dessert.png"
+            alt="Dessert"
+          />
+
+          <h2>Desserts</h2>
+        </div>
+      </div>
+
+      <div class="content_wrapper" id="dessert_content"></div>
+    </section>
+
+    <!-- Shopping Cart -->
+    <div class="basket_top">
+      <aside
+        class="basket_section"
+        id="basket"
+        aria-label="Shopping cart"
+      ></aside>
+    </div>
+
+  </div>
+</main>
 
     <!-- Mobile Bottom Navigation -->
     <nav class="mobile_nav">
@@ -207,7 +210,6 @@
     <!-- Desktop Footer -->
     <footer class="footer">
       <div class="footer-container">
-
         <!-- Logo and Hotline -->
         <div class="footer-logo">
           <img src="./assets/img/header_img-01.png" alt="Bestell App Logo" />
@@ -312,21 +314,13 @@
           ×
         </button>
 
-        <div class="order_dialog_icon">
-          ✓
-        </div>
+        <div class="order_dialog_icon">✓</div>
 
         <h2>Order successful!</h2>
 
-        <p>
-          Thank you for your order.
-          Your delicious food is on its way! 🍔
-        </p>
+        <p>Thank you for your order. Your delicious food is on its way! 🍔</p>
 
-        <button
-          class="order_dialog_button"
-          onclick="closeOrderDialog()"
-        >
+        <button class="order_dialog_button" onclick="closeOrderDialog()">
           Great!
         </button>
       </div>

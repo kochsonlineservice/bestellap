@@ -139,6 +139,22 @@ function removeFromBasket(id) {
   updateAddButton(id);
 }
 
+function deleteFromBasket(id) {
+  basket = basket.filter((basketItem) => basketItem.id !== id);
+
+  saveAndRenderBasket();
+  updateAddButton(id);
+}
+
+function deleteFromBasket(id) {
+  basket = basket.filter((basketItem) => basketItem.id !== id);
+
+  localStorage.setItem("basket", JSON.stringify(basket));
+
+  renderBasket();
+  updateBasketCount();
+}
+
 function removeBasketItem(id) {
   let index = basket.findIndex((item) => item.id === id);
 
@@ -276,11 +292,15 @@ function renderBasketDialog(html) {
 
 
 function getRemoveButton(basketItem) {
-  if (basketItem.quantity === 1) {
-    return getDeleteButtonTemplate(basketItem.id);
-  }
-
-  return getDecreaseButtonTemplate(basketItem.id);
+  return `
+    <button
+      class="basket_btn"
+      onclick="removeFromBasket(${basketItem.id})"
+      aria-label="Decrease quantity"
+    >
+      ➖
+    </button>
+  `;
 }
 
 function getDeleteButtonTemplate(id) {
@@ -307,8 +327,14 @@ function getDecreaseButtonTemplate(id) {
   `;
 }
 
-
 function order() {
+  basket = [];
+
+  localStorage.setItem("basket", JSON.stringify(basket));
+
+  renderBasket();
+  updateBasketCount();
+
   document.getElementById("order_dialog").showModal();
 }
 
